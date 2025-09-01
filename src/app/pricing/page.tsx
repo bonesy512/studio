@@ -4,101 +4,140 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Check } from 'lucide-react';
 import Link from 'next/link';
 
-const pricingPlans = [
+const designAndBranding = [
+  {
+    title: 'Logo Design',
+    price: '$2,800',
+    description: 'A unique and memorable logo to represent your brand.',
+    isActionable: true,
+  },
   {
     title: 'Full Brand Identity',
-    price: 'From $15,000',
-    features: [
-      { name: 'Brand Strategy & Positioning', price: '$5,000' },
-      { name: 'Logo & Identity System Design', price: '$6,000' },
-      { name: 'Comprehensive Brand Guidelines', price: '$2,500' },
-      { name: 'Key Visuals & Mockups', price: '$2,000' },
-      { name: 'Social Media & Digital Asset Kit', price: '$1,500' },
-    ],
-    isActionable: false,
-  },
-  {
-    title: 'AI Integration Strategy',
-    price: 'From $20,000',
-    features: [
-      { name: 'AI Opportunity Analysis', price: '$7,000' },
-      { name: 'Custom AI Strategy Development', price: '$8,000' },
-      { name: 'Implementation Roadmap & MVP Plan', price: '$4,000' },
-      { name: 'Technology & Vendor Selection', price: '$2,000' },
-      { name: 'Team Training & Enablement Session', price: '$3,000' },
-    ],
-    isActionable: false,
-  },
-  {
-    title: 'Technology Modernization',
-    price: 'From $25,000',
-    features: [
-      { name: 'Full Tech Stack Audit', price: '$8,000' },
-      { name: 'Scalable Architecture Design', price: '$9,000' },
-      { name: 'Data Migration Planning & Support', price: '$5,000' },
-      { name: 'API & Integration Strategy', price: '$4,000' },
-      { name: 'Performance Optimization Plan', price: '$3,000' },
-    ],
-    isActionable: false,
-  },
-  {
-    title: 'Paid Discovery & Roadmapping',
-    price: 'Fixed $3,000',
-    features: [
-      { name: 'In-depth Stakeholder Workshops', price: '$1,000' },
-      { name: 'Competitive & Market Analysis', price: '$500' },
-      { name: 'User Persona & Journey Mapping', price: '$500' },
-      { name: 'Technical Feasibility Assessment', price: '$500' },
-      { name: 'Actionable Strategic Roadmap', price: '$500' },
-    ],
+    price: '$6,500',
+    description: 'A comprehensive brand system including logo, color palette, typography, and style guide.',
     isActionable: true,
   },
 ];
 
+const webAndApp = [
+  {
+    title: 'Marketing Website',
+    price: '$7,500',
+    description: 'A beautiful and effective website to showcase your business.',
+    isActionable: true,
+  },
+  {
+    title: 'E-commerce Website',
+    price: '$12,000',
+    description: 'A robust online store to sell your products and services.',
+    isActionable: true,
+  },
+  {
+    title: 'Custom App / SaaS Platform (MVP)',
+    price: '$25,000+',
+    description: 'A minimum viable product for your custom application or SaaS idea.',
+    isActionable: false,
+  },
+];
+
+const aiAndConsulting = [
+  {
+    title: 'AI Integration (AaaS)',
+    price: '$8,000',
+    description: 'Integrate AI into your existing systems to improve efficiency.',
+    isActionable: true,
+  },
+  {
+    title: 'Custom AI Agent Development',
+    price: '$15,000',
+    description: 'A custom-built AI agent to automate tasks and delight your users.',
+    isActionable: false,
+  },
+];
+
+const retainersAndHourly = [
+    {
+        title: 'General Technical/Development',
+        price: '$175/hr',
+        description: 'For ongoing development, maintenance, and support needs.',
+        isActionable: false,
+    },
+    {
+        title: 'Specialized Consulting (AI/IT Strategy)',
+        price: '$250/hr',
+        description: 'Expert guidance on AI and IT strategy to drive your business forward.',
+        isActionable: false,
+    },
+     {
+        title: 'Paid Discovery & Roadmapping',
+        price: 'Fixed $3,000',
+        description: 'In-depth analysis and strategic planning for your project.',
+        isActionable: true,
+    }
+];
+
+
 export default function PricingPage() {
+  const renderPlan = (plan: any) => (
+    <Card key={plan.title} className="flex flex-col h-full">
+      <CardHeader>
+        <CardTitle>{plan.title}</CardTitle>
+        <CardDescription className="text-2xl font-semibold !text-primary-foreground">{plan.price}</CardDescription>
+      </CardHeader>
+      <CardContent className="flex-grow">
+          <p className="text-muted-foreground">{plan.description}</p>
+      </CardContent>
+      <CardFooter>
+        {plan.isActionable ? (
+          <Button asChild className="w-full">
+            <Link href="/book">Book Discovery Session</Link>
+          </Button>
+        ) : (
+          <Button asChild className="w-full" variant="outline">
+              <Link href="/book">Book a Consultation</Link>
+          </Button>
+        )}
+      </CardFooter>
+    </Card>
+  );
+
   return (
     <div className="space-y-12">
       <section className="text-center space-y-4">
         <h1 className="text-5xl font-bold tracking-tighter">Pricing & Plans</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Transparent pricing for transformative results. Build your plan or choose a package.
+          Transparent pricing for transformative results. Choose a service or book a consultation.
         </p>
       </section>
+      
+      <section className="space-y-8">
+        <div>
+          <h2 className="text-3xl font-bold tracking-tighter mb-4">Design & Branding</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {designAndBranding.map(renderPlan)}
+          </div>
+        </div>
+        
+        <div>
+          <h2 className="text-3xl font-bold tracking-tighter mb-4">Web & App Development</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {webAndApp.map(renderPlan)}
+          </div>
+        </div>
 
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-        {pricingPlans.map((plan) => (
-          <Card key={plan.title} className="flex flex-col h-full">
-            <CardHeader>
-              <CardTitle>{plan.title}</CardTitle>
-              <CardDescription className="text-2xl font-semibold !text-primary-foreground">{plan.price}</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-grow space-y-4">
-                <p className="text-muted-foreground font-semibold">What's included:</p>
-                <ul className="space-y-3">
-                    {plan.features.map(feature => (
-                        <li key={feature.name} className="flex items-center justify-between gap-2">
-                            <div className="flex items-center gap-2">
-                                <Check className="h-5 w-5 text-green-500 shrink-0" />
-                                <span className="text-muted-foreground">{feature.name}</span>
-                            </div>
-                            <span className="font-semibold text-primary-foreground/90">{feature.price}</span>
-                        </li>
-                    ))}
-                </ul>
-            </CardContent>
-            <CardFooter>
-              {plan.isActionable ? (
-                <Button asChild className="w-full">
-                  <Link href="/book">Book Discovery Session</Link>
-                </Button>
-              ) : (
-                <Button asChild className="w-full" variant="outline">
-                    <Link href="/book">Book a Consultation</Link>
-                </Button>
-              )}
-            </CardFooter>
-          </Card>
-        ))}
+        <div>
+          <h2 className="text-3xl font-bold tracking-tighter mb-4">AI & Consulting</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {aiAndConsulting.map(renderPlan)}
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-3xl font-bold tracking-tighter mb-4">Retainers & Hourly</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {retainersAndHourly.map(renderPlan)}
+          </div>
+        </div>
       </section>
     </div>
   );
