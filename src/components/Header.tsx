@@ -39,7 +39,7 @@ export default function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center px-4 md:px-6">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Sunrise className="h-6 w-6 text-primary" />
-          <span className="font-bold text-lg sm:inline-block">The Salt & Light Studio</span>
+          <span className="font-bold text-lg sm:inline-block">The Salt & Light Co.</span>
         </Link>
         
         <div className="flex flex-1 items-center justify-end space-x-2">
@@ -69,7 +69,7 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <Sunrise className="h-6 w-6 text-primary" />
-                  <span className="font-bold">The Salt & Light Studio</span>
+                  <span className="font-bold">The Salt & Light Co.</span>
                 </Link>
                 <nav className="flex flex-col gap-4 text-lg">
                   {navLinks.map((link) => (

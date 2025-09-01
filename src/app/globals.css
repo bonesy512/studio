@@ -8,27 +8,27 @@ body {
 
 @layer base {
   :root {
-    --background: 210 40% 98%; /* Light, airy off-white */
-    --foreground: 222 47% 11%; /* Deep navy blue */
-    --card: 210 40% 98%;
-    --card-foreground: 222 47% 11%;
-    --popover: 210 40% 98%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 221 83% 53%; /* Royal blue */
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 91%; /* Light grey/sandy */
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 91%;
-    --muted-foreground: 215 25% 65%;
-    --accent: 43 96% 56%; /* Warm lighthouse yellow */
-    --accent-foreground: 222 47% 11%;
+    --background: 35 100% 96%; /* Creamy off-white */
+    --foreground: 215 38% 25%; /* Dark navy/charcoal */
+    --card: 35 100% 96%;
+    --card-foreground: 215 38% 25%;
+    --popover: 35 100% 96%;
+    --popover-foreground: 215 38% 25%;
+    --primary: 215 38% 25%; /* Dark navy/charcoal */
+    --primary-foreground: 35 100% 96%;
+    --secondary: 35 100% 92%; /* Slightly darker cream */
+    --secondary-foreground: 215 38% 25%;
+    --muted: 35 100% 92%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 30 50% 40%; /* Brown/Gold accent */
+    --accent-foreground: 35 100% 96%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 210 40% 85%;
-    --input: 210 40% 85%;
-    --ring: 221 83% 53%;
-    --chart-1: 221 83% 53%;
-    --chart-2: 43 96% 56%;
+    --border: 215 25% 80%;
+    --input: 215 25% 80%;
+    --ring: 215 38% 25%;
+    --chart-1: 215 38% 25%;
+    --chart-2: 30 50% 40%;
     --chart-3: 160 60% 45%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
@@ -36,27 +36,27 @@ body {
   }
 
   .dark {
-    --background: 222 47% 11%; /* Deep navy blue */
-    --foreground: 210 40% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%; /* White */
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 25% 65%;
-    --accent: 43 96% 56%; /* Warm lighthouse yellow */
-    --accent-foreground: 222 47% 11%;
+    --background: 215 38% 15%; /* Dark navy */
+    --foreground: 35 100% 96%;
+    --card: 215 38% 15%;
+    --card-foreground: 35 100% 96%;
+    --popover: 215 38% 15%;
+    --popover-foreground: 35 100% 96%;
+    --primary: 35 100% 96%; /* Creamy white */
+    --primary-foreground: 215 38% 15%;
+    --secondary: 215 35% 20%;
+    --secondary-foreground: 35 100% 96%;
+    --muted: 215 35% 20%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 35 90% 70%; /* Lighter Gold accent for dark mode */
+    --accent-foreground: 215 38% 15%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 27%;
-    --input: 217 33% 27%;
-    --ring: 210 40% 98%;
-    --chart-1: 210 40% 98%;
-    --chart-2: 43 96% 56%;
+    --border: 215 30% 30%;
+    --input: 215 30% 30%;
+    --ring: 35 100% 96%;
+    --chart-1: 35 100% 96%;
+    --chart-2: 35 90% 70%;
     --chart-3: 160 60% 45%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
@@ -75,7 +75,7 @@ body {
     font-family: 'Lora', serif;
   }
   .glass-card {
-      @apply bg-card/50 border border-white/10 backdrop-blur-lg;
+      @apply bg-card/50 border border-black/10 backdrop-blur-lg;
   }
 
   .dark .glass-card {
@@ -87,10 +87,10 @@ body {
       z-index: -1;
       border-radius: 9999px;
       filter: blur(150px);
-      opacity: 0.15;
+      opacity: 0.1;
   }
 
   .dark .glow-effect {
-    opacity: 0.25;
+    opacity: 0.2;
   }
 }

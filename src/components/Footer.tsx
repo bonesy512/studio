@@ -17,7 +17,7 @@ export default function Footer() {
         <Separator />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
           <div className="space-y-2">
-            <h3 className="font-bold text-lg">The Salt & Light Studio</h3>
+            <h3 className="font-bold text-lg">The Salt & Light Co.</h3>
             <p className="text-muted-foreground">
               Crafting tomorrow's digital experiences from Austin, Texas.
             </p>
@@ -36,13 +36,13 @@ export default function Footer() {
             <div>
               <h4 className="font-semibold mb-2">Contact</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="mailto:studio@saltandlight.studio" className="hover:text-foreground">studio@saltandlight.studio</a></li>
+                <li><a href="mailto:studio@saltandlight.co" className="hover:text-foreground">studio@saltandlight.co</a></li>
               </ul>
             </div>
           </div>
         </div>
         <div className="py-6 text-center text-muted-foreground text-sm">
-          <p>&copy; {currentYear || new Date().getFullYear()} The Salt & Light Studio. All Rights Reserved. | Austin, Texas</p>
+          <p>&copy; {currentYear || new Date().getFullYear()} The Salt & Light Co. All Rights Reserved. | Austin, Texas</p>
         </div>
       </div>
     </footer>
