@@ -1,8 +1,9 @@
 // src/app/portfolio/page.tsx
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 const projects = [
   {
@@ -61,7 +62,7 @@ export default function PortfolioPage() {
 
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
-          <Card key={project.title} className="flex flex-col group overflow-hidden">
+          <Card key={project.title} className="flex flex-col group overflow-hidden bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
             <div className="relative overflow-hidden">
               <Image
                 src={project.imageUrl}
@@ -88,6 +89,13 @@ export default function PortfolioPage() {
             <CardContent className="flex-grow">
               {/* Future content can go here */}
             </CardContent>
+            {project.link === '#' && (
+              <CardFooter>
+                <Button asChild variant="secondary" className="w-full">
+                  <Link href="#">Learn More</Link>
+                </Button>
+              </CardFooter>
+            )}
           </Card>
         ))}
       </section>
