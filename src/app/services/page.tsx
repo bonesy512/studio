@@ -1,6 +1,8 @@
 // src/app/services/page.tsx
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Palette, Code, BrainCircuit } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const serviceCategories = [
   {
@@ -79,6 +81,11 @@ export default function ServicesPage() {
                   <h3 className="text-lg font-semibold text-primary">{service.headline}</h3>
                   <p className="text-muted-foreground">{service.content}</p>
                 </CardContent>
+                <CardFooter>
+                  <Button asChild className="w-full">
+                    <Link href="/pricing">View Pricing Details</Link>
+                  </Button>
+                </CardFooter>
               </Card>
             ))}
           </div>
