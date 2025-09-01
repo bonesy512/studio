@@ -22,6 +22,12 @@ export default function Header() {
           >
             Pricing
           </Link>
+          <Link
+            href="/book"
+            className="transition-colors hover:text-foreground/80 text-foreground/60"
+          >
+            Book Now
+          </Link>
         </nav>
       </div>
     </header>

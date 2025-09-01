@@ -49,7 +49,7 @@ export default function PricingPage() {
             {plan.isActionable && (
               <CardFooter>
                 <Button asChild className="w-full">
-                  <Link href="https://calendly.com/your-username/discovery-session" target="_blank" rel="noopener noreferrer">
+                  <Link href="/book">
                     Book Discovery Session
                   </Link>
                 </Button>
