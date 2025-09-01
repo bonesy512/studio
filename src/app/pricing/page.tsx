@@ -74,7 +74,7 @@ export default function PricingPage() {
                 {plan.items.map((item) => (
                   <li key={item.name} className="flex justify-between items-center">
                     <span className="text-muted-foreground">{item.name}</span>
-                    <span className="font-semibold text-primary-foreground">{item.price}</span>
+                    <span className="font-semibold text-foreground">{item.price}</span>
                   </li>
                 ))}
               </ul>
