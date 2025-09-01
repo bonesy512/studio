@@ -1,27 +1,55 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Check } from 'lucide-react';
 import Link from 'next/link';
 
 const pricingPlans = [
   {
     title: 'Full Brand Identity',
     price: 'From $15,000',
-    description: 'A complete visual and strategic foundation. We cover brand strategy, logo design, visual systems, and comprehensive guidelines to ensure consistency at every touchpoint.',
+    features: [
+      'Brand Strategy & Positioning',
+      'Logo & Identity System Design',
+      'Comprehensive Brand Guidelines',
+      'Key Visuals & Mockups',
+      'Social Media & Digital Asset Kit',
+    ],
+    isActionable: false,
   },
   {
     title: 'AI Integration Strategy',
     price: 'From $20,000',
-    description: 'Unlock the power of artificial intelligence. We identify opportunities, develop a custom AI strategy, and create a roadmap for implementation, from chatbots to complex data models.',
+    features: [
+      'AI Opportunity Analysis',
+      'Custom AI Strategy Development',
+      'Implementation Roadmap & MVP Plan',
+      'Technology & Vendor Selection',
+      'Team Training & Enablement Session',
+    ],
+    isActionable: false,
   },
   {
     title: 'Technology Modernization',
     price: 'From $25,000',
-    description: 'Future-proof your infrastructure. Our team assesses your current tech stack, plans a migration to modern systems, and supports the execution for enhanced performance and scalability.',
+    features: [
+      'Full Tech Stack Audit',
+      'Scalable Architecture Design',
+      'Data Migration Planning & Support',
+      'API & Integration Strategy',
+      'Performance Optimization Plan',
+    ],
+    isActionable: false,
   },
   {
     title: 'Paid Discovery & Roadmapping',
     price: 'Fixed $3,000',
-    description: 'The perfect starting point for complex projects. We conduct an in-depth discovery process to understand your challenges and deliver a strategic roadmap with clear, actionable steps. This fee is credited towards any larger project engagement.',
+    features: [
+      'In-depth Stakeholder Workshops',
+      'Competitive & Market Analysis',
+      'User Persona & Journey Mapping',
+      'Technical Feasibility Assessment',
+      'Actionable Strategic Roadmap',
+    ],
     isActionable: true,
   },
 ];
@@ -32,29 +60,39 @@ export default function PricingPage() {
       <section className="text-center space-y-4">
         <h1 className="text-5xl font-bold tracking-tighter">Pricing & Plans</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Simple, transparent pricing for transformative results.
+          Simple, transparent pricing for transformative results. Choose a starting point.
         </p>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         {pricingPlans.map((plan) => (
-          <Card key={plan.title} className="flex flex-col">
+          <Card key={plan.title} className="flex flex-col h-full">
             <CardHeader>
               <CardTitle>{plan.title}</CardTitle>
               <CardDescription className="text-2xl font-semibold !text-primary-foreground">{plan.price}</CardDescription>
             </CardHeader>
-            <CardContent className="flex-grow">
-              <p className="text-muted-foreground">{plan.description}</p>
+            <CardContent className="flex-grow space-y-4">
+                <p className="text-muted-foreground font-semibold">What's included:</p>
+                <ul className="space-y-3">
+                    {plan.features.map(feature => (
+                        <li key={feature} className="flex items-center gap-2">
+                            <Check className="h-5 w-5 text-green-500" />
+                            <span className="text-muted-foreground">{feature}</span>
+                        </li>
+                    ))}
+                </ul>
             </CardContent>
-            {plan.isActionable && (
-              <CardFooter>
+            <CardFooter>
+              {plan.isActionable ? (
                 <Button asChild className="w-full">
-                  <Link href="/book">
-                    Book Discovery Session
-                  </Link>
+                  <Link href="/book">Book Discovery Session</Link>
                 </Button>
-              </CardFooter>
-            )}
+              ) : (
+                <Button asChild className="w-full" variant="outline">
+                    <Link href="/book">Book a Consultation</Link>
+                </Button>
+              )}
+            </CardFooter>
           </Card>
         ))}
       </section>
