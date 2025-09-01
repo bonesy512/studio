@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="space-y-2">
             <h3 className="font-bold text-lg">Schustereit Studios</h3>
             <p className="text-muted-foreground">
-              Crafting tomorrow's digital experiences.
+              Crafting tomorrow's digital experiences from Austin, Texas.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8">
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="py-6 text-center text-muted-foreground text-sm">
-          <p>&copy; {currentYear || new Date().getFullYear()} Schustereit Studios. All Rights Reserved.</p>
+          <p>&copy; {currentYear || new Date().getFullYear()} Schustereit Studios. All Rights Reserved. | Austin, Texas</p>
         </div>
       </div>
     </footer>

@@ -6,8 +6,47 @@ import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Schustereit Studios',
-  description: 'A high-end design, technology, and AI consultancy for ambitious brands.',
+  title: 'Schustereit Studios | Austin, TX Web Design & AI Consultancy',
+  description: 'A high-end design, technology, and AI consultancy in Austin, Texas for ambitious brands. We build what\'s next.',
+  keywords: ['Web Design Austin', 'AI Consulting Austin', 'Technology Consultancy Texas', 'Schustereit Studios', 'Next.js Development', 'Brand Identity'],
+  authors: [{ name: 'Schustereit Studios', url: 'https://schustereitstudios.design' }],
+  creator: 'Schustereit Studios',
+  publisher: 'Schustereit Studios',
+  openGraph: {
+    title: 'Schustereit Studios | Austin, TX Web Design & AI Consultancy',
+    description: 'A high-end design, technology, and AI consultancy in Austin, Texas for ambitious brands. We build what\'s next.',
+    url: 'https://schustereitstudios.design',
+    siteName: 'Schustereit Studios',
+    images: [
+      {
+        url: 'https://www.schustereitstudios.design/og-image.jpg', // Should be an absolute URL
+        width: 1200,
+        height: 630,
+        alt: 'Schustereit Studios Logo and Tagline',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Schustereit Studios | Austin, TX Web Design & AI Consultancy',
+    description: 'A high-end design, technology, and AI consultancy in Austin, Texas for ambitious brands. We build what\'s next.',
+    images: ['https://www.schustereitstudios.design/twitter-og-image.jpg'], // Should be an absolute URL
+    creator: '@Schustereit',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({

@@ -36,7 +36,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold tracking-tighter">Who We Are</h2>
         <div className="text-muted-foreground space-y-4">
           <p>
-            Schustereit Studios is a collective of designers, developers, and strategists who believe in the power of technology to reshape industries. We partner with forward-thinking companies to create category-defining brands, products, and AI-powered experiences. Our work is minimalist, our process is collaborative, and our results are transformative.
+            Based in Austin, Texas, Schustereit Studios is a collective of designers, developers, and strategists who believe in the power of technology to reshape industries. We partner with forward-thinking companies to create category-defining brands, products, and AI-powered experiences. Our work is minimalist, our process is collaborative, and our results are transformative.
           </p>
           <p>
             Our pedigree includes founding successful ventures like{' '}
