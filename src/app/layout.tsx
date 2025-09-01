@@ -8,7 +8,7 @@ import { Toaster } from '@/components/ui/toaster';
 export const metadata: Metadata = {
   title: 'The Salt & Light Studio | Austin, TX Web Design & AI Consultancy',
   description: 'A high-end design, technology, and AI consultancy in Austin, Texas for ambitious brands. We build what\'s next.',
-  keywords: ['Web Design Austin', 'AI Consulting Austin', 'Technology Consultancy Texas', 'The Salt & Light Studio', 'Next.js Development', 'Brand Identity'],
+  keywords: ['Web Design Austin', 'AI Consulting Austin', 'Technology Consultancy Texas', 'The Salt & Light Studio', 'Next.js Development', 'Brand Identity', 'Christian Business'],
   authors: [{ name: 'The Salt & Light Studio', url: 'https://saltandlight.studio' }],
   creator: 'The Salt & Light Studio',
   publisher: 'The Salt & Light Studio',
@@ -59,14 +59,14 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased relative">
         <div className="glow-effect top-[-20%] right-[-20%] h-2/3 w-2/3 bg-primary"></div>
         <div className="glow-effect bottom-[-20%] left-[-20%] h-2/3 w-2/3 bg-accent"></div>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem={false}
           disableTransitionOnChange
         >

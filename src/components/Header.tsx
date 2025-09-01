@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, Sunrise } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -25,8 +25,8 @@ export default function Header() {
     <Link
       href={href}
       className={cn(
-        'transition-colors hover:text-foreground/80',
-        pathname === href ? 'text-foreground' : 'text-foreground/60'
+        'transition-colors hover:text-primary',
+        pathname === href ? 'text-primary font-semibold' : 'text-foreground/80'
       )}
       onClick={() => setIsMobileMenuOpen(false)}
     >
@@ -35,16 +35,15 @@ export default function Header() {
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/30 backdrop-blur-lg">
-      <div className="container flex h-14 max-w-screen-2xl items-center px-4 md:px-6">
-        <div className="flex items-center">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold sm:inline-block ml-4">The Salt & Light Studio</span>
-          </Link>
-        </div>
-
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg">
+      <div className="container flex h-16 max-w-screen-2xl items-center px-4 md:px-6">
+        <Link href="/" className="mr-6 flex items-center space-x-2">
+          <Sunrise className="h-6 w-6 text-primary" />
+          <span className="font-bold text-lg sm:inline-block">The Salt & Light Studio</span>
+        </Link>
+        
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <nav className="hidden items-center gap-6 text-sm md:flex">
+          <nav className="hidden items-center gap-8 text-base md:flex">
             {navLinks.map((link) => (
               <NavLink key={link.href} href={link.href}>
                 {link.label}
@@ -62,16 +61,17 @@ export default function Header() {
                 <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="bg-background/80 backdrop-blur-lg">
+            <SheetContent side="left" className="bg-background/95 backdrop-blur-lg">
               <div className="flex flex-col gap-6 p-6">
                 <Link
                   href="/"
                   className="flex items-center space-x-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
+                  <Sunrise className="h-6 w-6 text-primary" />
                   <span className="font-bold">The Salt & Light Studio</span>
                 </Link>
-                <nav className="flex flex-col gap-4">
+                <nav className="flex flex-col gap-4 text-lg">
                   {navLinks.map((link) => (
                     <NavLink key={link.href} href={link.href}>
                       {link.label}
