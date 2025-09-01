@@ -37,7 +37,7 @@ const prompt = ai.definePrompt({
   name: 'suggestConsultingPlanPrompt',
   input: {schema: SuggestConsultingPlanInputSchema},
   output: {schema: SuggestConsultingPlanOutputSchema},
-  prompt: `You are an AI assistant that helps potential clients of Bonesy Design Consultancy understand which consulting plan is best for them.
+  prompt: `You are an AI assistant that helps potential clients of Schustereit Studios understand which consulting plan is best for them.
 
   Based on their business standing, recommend one of the following plans and set the 'price' field accordingly:
 

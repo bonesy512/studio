@@ -17,7 +17,7 @@ export default function Footer() {
         <Separator />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
           <div className="space-y-2">
-            <h3 className="font-bold text-lg">Bonesy Design</h3>
+            <h3 className="font-bold text-lg">Schustereit Studios</h3>
             <p className="text-muted-foreground">
               Crafting tomorrow's digital experiences.
             </p>
@@ -34,13 +34,13 @@ export default function Footer() {
             <div>
               <h4 className="font-semibold mb-2">Contact</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="mailto:studio@bonesydesign.com" className="hover:text-foreground">studio@bonesydesign.com</a></li>
+                <li><a href="mailto:studio@schustereitstudios.design" className="hover:text-foreground">studio@schustereitstudios.design</a></li>
               </ul>
             </div>
           </div>
         </div>
         <div className="py-6 text-center text-muted-foreground text-sm">
-          <p>&copy; {currentYear || new Date().getFullYear()} Bonesy Design. All Rights Reserved.</p>
+          <p>&copy; {currentYear || new Date().getFullYear()} Schustereit Studios. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

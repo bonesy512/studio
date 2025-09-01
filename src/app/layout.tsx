@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Bonesy Design Consultancy',
+  title: 'Schustereit Studios',
   description: 'A high-end design, technology, and AI consultancy for ambitious brands.',
 };
 
