@@ -31,7 +31,7 @@ export default function RootLayout({
         >
           <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="flex-grow max-w-4xl mx-auto py-12 px-4 w-full">{children}</main>
+            <main className="flex-grow max-w-screen-2xl mx-auto py-12 px-4 md:px-6 w-full">{children}</main>
             <Footer />
           </div>
           <Toaster />
