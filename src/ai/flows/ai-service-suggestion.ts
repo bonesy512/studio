@@ -25,6 +25,7 @@ const SuggestConsultingPlanOutputSchema = z.object({
   suggestedPlan: z.string().describe('The suggested consulting plan for the potential client.'),
   justification: z.string().describe('The justification for the suggested plan.'),
   potentialCost: z.string().describe('The potential cost for the suggested plan.'),
+  price: z.number().optional().describe('The fixed price of the plan in USD, if applicable.'),
 });
 export type SuggestConsultingPlanOutput = z.infer<typeof SuggestConsultingPlanOutputSchema>;
 
@@ -43,9 +44,10 @@ const prompt = ai.definePrompt({
   - **Full Brand Identity** - (From $15,000) Perfect for businesses seeking a comprehensive brand overhaul, covering strategy, visual identity, and brand guidelines.
   - **AI Integration Strategy** - (From $20,000) Ideal for companies ready to leverage AI for innovation, focusing on identifying AI opportunities, strategy development, and implementation roadmaps.
   - **Technology Modernization** - (From $25,000) Suited for businesses needing to update their technology infrastructure, offering assessment, planning, and execution support.
-  - **Paid Discovery & Roadmapping** - (Fixed $3,000) Designed for businesses unsure of their exact needs, providing an in-depth discovery process and a detailed roadmap to achieve their goals.
+  - **Paid Discovery & Roadmapping** - (Fixed $3,000) Designed for businesses unsure of their exact needs, providing an in-depth discovery process and a detailed roadmap to achieve their goals. For this plan, set the 'price' field to 3000.
 
   Provide a brief justification for why the plan is the best fit, and include the potential cost.
+  Only set the 'price' field if the recommended plan is "Paid Discovery & Roadmapping". For other plans, leave it undefined.
 
   Business Standing: {{{businessStanding}}}
   `,
