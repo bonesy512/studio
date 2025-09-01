@@ -40,6 +40,13 @@ const projects = [
     imageHint: 'automation software',
     link: 'https://lazily.ai',
   },
+  {
+    title: 'Mystic Vault Society',
+    description: 'Detailed project description and images coming soon.',
+    imageUrl: 'https://picsum.photos/600/405',
+    imageHint: 'mystical community brand',
+    link: '#',
+  },
 ];
 
 export default function PortfolioPage() {
