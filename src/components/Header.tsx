@@ -39,7 +39,7 @@ export default function Header() {
       <div className="container flex h-14 max-w-screen-2xl items-center px-4 md:px-6">
         <div className="flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold sm:inline-block ml-4">Schustereit Studios</span>
+            <span className="font-bold sm:inline-block ml-4">The Salt & Light Studio</span>
           </Link>
         </div>
 
@@ -69,7 +69,7 @@ export default function Header() {
                   className="flex items-center space-x-2"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <span className="font-bold">Schustereit Studios</span>
+                  <span className="font-bold">The Salt & Light Studio</span>
                 </Link>
                 <nav className="flex flex-col gap-4">
                   {navLinks.map((link) => (

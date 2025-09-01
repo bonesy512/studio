@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className="space-y-24">
       <section className="text-center space-y-4">
-        <h1 className="text-5xl font-bold tracking-tighter">Schustereit Studios</h1>
+        <h1 className="text-5xl font-bold tracking-tighter">The Salt & Light Studio</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           A high-end design, technology, and AI consultancy for ambitious brands. We build what's next.
         </p>
@@ -36,7 +36,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold tracking-tighter">Who We Are</h2>
         <div className="text-muted-foreground space-y-4">
           <p>
-            Based in Austin, Texas, Schustereit Studios is a collective of designers, developers, and strategists who believe in the power of technology to reshape industries. We partner with forward-thinking companies to create category-defining brands, products, and AI-powered experiences. Our work is minimalist, our process is collaborative, and our results are transformative.
+            Based in Austin, Texas, The Salt & Light Studio is a collective of designers, developers, and strategists who believe in the power of technology to reshape industries. We partner with forward-thinking companies to create category-defining brands, products, and AI-powered experiences. Our work is minimalist, our process is collaborative, and our results are transformative.
           </p>
           <p>
             Our pedigree includes founding successful ventures like{' '}

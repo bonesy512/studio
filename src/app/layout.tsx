@@ -6,23 +6,23 @@ import Footer from '@/components/Footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Schustereit Studios | Austin, TX Web Design & AI Consultancy',
+  title: 'The Salt & Light Studio | Austin, TX Web Design & AI Consultancy',
   description: 'A high-end design, technology, and AI consultancy in Austin, Texas for ambitious brands. We build what\'s next.',
-  keywords: ['Web Design Austin', 'AI Consulting Austin', 'Technology Consultancy Texas', 'Schustereit Studios', 'Next.js Development', 'Brand Identity'],
-  authors: [{ name: 'Schustereit Studios', url: 'https://schustereitstudios.design' }],
-  creator: 'Schustereit Studios',
-  publisher: 'Schustereit Studios',
+  keywords: ['Web Design Austin', 'AI Consulting Austin', 'Technology Consultancy Texas', 'The Salt & Light Studio', 'Next.js Development', 'Brand Identity'],
+  authors: [{ name: 'The Salt & Light Studio', url: 'https://saltandlight.studio' }],
+  creator: 'The Salt & Light Studio',
+  publisher: 'The Salt & Light Studio',
   openGraph: {
-    title: 'Schustereit Studios | Austin, TX Web Design & AI Consultancy',
+    title: 'The Salt & Light Studio | Austin, TX Web Design & AI Consultancy',
     description: 'A high-end design, technology, and AI consultancy in Austin, Texas for ambitious brands. We build what\'s next.',
-    url: 'https://schustereitstudios.design',
-    siteName: 'Schustereit Studios',
+    url: 'https://saltandlight.studio',
+    siteName: 'The Salt & Light Studio',
     images: [
       {
-        url: 'https://www.schustereitstudios.design/og-image.jpg', // Should be an absolute URL
+        url: 'https://www.saltandlight.studio/og-image.jpg', // Should be an absolute URL
         width: 1200,
         height: 630,
-        alt: 'Schustereit Studios Logo and Tagline',
+        alt: 'The Salt & Light Studio Logo and Tagline',
       },
     ],
     locale: 'en_US',
@@ -30,10 +30,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Schustereit Studios | Austin, TX Web Design & AI Consultancy',
+    title: 'The Salt & Light Studio | Austin, TX Web Design & AI Consultancy',
     description: 'A high-end design, technology, and AI consultancy in Austin, Texas for ambitious brands. We build what\'s next.',
-    images: ['https://www.schustereitstudios.design/twitter-og-image.jpg'], // Should be an absolute URL
-    creator: '@Schustereit',
+    images: ['https://www.saltandlight.studio/twitter-og-image.jpg'], // Should be an absolute URL
+    creator: '@SaltLightStudio',
   },
   robots: {
     index: true,
