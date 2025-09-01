@@ -89,13 +89,11 @@ export default function PortfolioPage() {
             <CardContent className="flex-grow">
               {/* Future content can go here */}
             </CardContent>
-            {project.link === '#' && (
-              <CardFooter>
-                <Button asChild variant="secondary" className="w-full">
-                  <Link href="#">Learn More</Link>
-                </Button>
-              </CardFooter>
-            )}
+            <CardFooter>
+              <Button asChild variant="secondary" className="w-full">
+                <Link href="#">Learn More</Link>
+              </Button>
+            </CardFooter>
           </Card>
         ))}
       </section>
