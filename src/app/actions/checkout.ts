@@ -11,7 +11,7 @@ export async function createCheckoutSession(productName: string, amount: number)
     // In a development environment without a real Stripe key,
     // we can simulate a successful checkout for UI/UX testing.
     console.log('Stripe key not found or is placeholder, simulating successful checkout.');
-    const successUrl = new URL(`${origin}/pricing`);
+    const successUrl = new URL(`${origin}/book`);
     successUrl.searchParams.set('session_id', `cs_test_${btoa(Math.random().toString()).substring(0, 30)}`);
     redirect(successUrl.toString());
     return;
@@ -32,7 +32,7 @@ export async function createCheckoutSession(productName: string, amount: number)
       },
     ],
     mode: 'payment',
-    success_url: `${origin}/pricing?session_id={CHECKOUT_SESSION_ID}`,
+    success_url: `${origin}/book?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${origin}/`,
   });
 

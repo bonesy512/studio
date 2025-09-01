@@ -1,7 +1,16 @@
+'use client';
+
 import { Separator } from '@/components/ui/separator';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export default function Footer() {
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="w-full">
       <div className="max-w-4xl mx-auto px-4">
@@ -31,7 +40,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="py-6 text-center text-muted-foreground text-sm">
-          <p>&copy; {new Date().getFullYear()} Bonesy Design. All Rights Reserved.</p>
+          <p>&copy; {currentYear || new Date().getFullYear()} Bonesy Design. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
