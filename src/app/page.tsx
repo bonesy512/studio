@@ -40,13 +40,13 @@ export default function Home() {
           </p>
           <p>
             Our pedigree includes founding successful ventures like{' '}
-            <a href="https://landhacker.ai" target="_blank" rel="noopener noreferrer" className="text-primary-foreground underline">
+            <a href="https://landhacker.ai" target="_blank" rel="noopener noreferrer" className="text-primary underline">
               landhacker.ai
             </a>{' '}
             and{' '}
-            <a href="https://lazily.ai" target="_blank" rel="noopener noreferrer" className="text-primary-foreground underline">
+            <a href="https://lazily.ai" target="_blank" rel="noopener noreferrer" className="text-primary underline">
               lazily.ai
-            </a>. Learn more <Link href="/about" className="text-primary-foreground underline">about us</Link>.
+            </a>. Learn more <Link href="/about" className="text-primary underline">about us</Link>.
           </p>
         </div>
       </section>
