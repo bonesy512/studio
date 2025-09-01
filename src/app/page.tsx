@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import AISuggestion from '@/components/ai-suggestion';
 import Link from 'next/link';
