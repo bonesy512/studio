@@ -48,6 +48,13 @@ const projects = [
     imageHint: 'mystical community brand',
     link: '#',
   },
+  {
+    title: 'The Veilbreakers Crusade',
+    description: 'A Dungeons & Dragons 5e campaign book and creative IP.',
+    imageUrl: 'https://picsum.photos/600/406',
+    imageHint: 'fantasy book cover',
+    link: '#',
+  },
 ];
 
 export default function PortfolioPage() {
