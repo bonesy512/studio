@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import Link from 'next/link';
 import { suggestConsultingPlan, type SuggestConsultingPlanOutput } from '@/ai/flows/ai-service-suggestion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
@@ -12,7 +11,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
-import { createDiscoverySession } from '@/app/actions/checkout';
+import { createCheckoutSession } from '@/app/actions/checkout';
 
 const formSchema = z.object({
   businessStanding: z.string().min(50, {
@@ -106,16 +105,10 @@ export default function AISuggestion() {
             <p className="text-muted-foreground">{suggestion.justification}</p>
           </CardContent>
           <CardFooter>
-            {suggestion.price ? (
-              <form action={createDiscoverySession} className="w-full">
+            {suggestion.price && (
+              <form action={() => createCheckoutSession(suggestion.suggestedPlan, suggestion.price)} className="w-full">
                 <Button type="submit" className="w-full">Proceed to Checkout</Button>
               </form>
-            ) : (
-               <Button asChild className="w-full">
-                  <Link href="/book">
-                    Book a Consultation
-                  </Link>
-                </Button>
             )}
           </CardFooter>
         </Card>

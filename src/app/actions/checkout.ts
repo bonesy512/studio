@@ -4,7 +4,7 @@ import { stripe } from '@/lib/stripe';
 import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-export async function createDiscoverySession() {
+export async function createCheckoutSession(productName: string, amount: number) {
   const origin = headers().get('origin') || process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:9002';
 
   if (!process.env.STRIPE_SECRET_KEY || process.env.STRIPE_SECRET_KEY === 'your_stripe_secret_key_here') {
@@ -24,17 +24,16 @@ export async function createDiscoverySession() {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: 'Paid Discovery & Roadmapping',
-            description: 'In-depth discovery process and strategic roadmap.',
+            name: productName,
           },
-          unit_amount: 300000, // $3000.00
+          unit_amount: amount * 100, // amount in cents
         },
         quantity: 1,
       },
     ],
     mode: 'payment',
     success_url: `${origin}/pricing?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${origin}/pricing`,
+    cancel_url: `${origin}/`,
   });
 
   if (session.url) {
