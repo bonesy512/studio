@@ -97,7 +97,9 @@ export default function AISuggestion() {
         <Card className="bg-secondary">
           <CardHeader>
             <CardTitle>Our Recommendation: {suggestion.suggestedPlan}</CardTitle>
-            <CardDescription>Based on your description, here's what we suggest.</CardDescription>
+            <CardDescription>Based on your description, here's what we suggest. <br />
+            <span className="font-semibold !text-primary-foreground">Potential Cost: {suggestion.potentialCost}</span>
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground">{suggestion.justification}</p>
