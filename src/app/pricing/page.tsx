@@ -1,6 +1,6 @@
-import { createDiscoverySession } from '@/app/actions/checkout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import Link from 'next/link';
 
 const pricingPlans = [
   {
@@ -48,9 +48,11 @@ export default function PricingPage() {
             </CardContent>
             {plan.isActionable && (
               <CardFooter>
-                <form action={createDiscoverySession} className="w-full">
-                  <Button type="submit" className="w-full">Book Discovery Session</Button>
-                </form>
+                <Button asChild className="w-full">
+                  <Link href="https://calendly.com/your-username/discovery-session" target="_blank" rel="noopener noreferrer">
+                    Book Discovery Session
+                  </Link>
+                </Button>
               </CardFooter>
             )}
           </Card>

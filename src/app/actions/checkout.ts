@@ -14,6 +14,7 @@ export async function createDiscoverySession() {
     const successUrl = new URL(`${origin}/pricing`);
     successUrl.searchParams.set('session_id', `cs_test_${btoa(Math.random().toString()).substring(0, 30)}`);
     redirect(successUrl.toString());
+    return;
   }
 
   const session = await stripe.checkout.sessions.create({
