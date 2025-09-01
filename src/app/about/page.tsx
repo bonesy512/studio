@@ -19,7 +19,7 @@ const teamMembers = [
     bio: "Lindsey is the creative force behind The Salt & Light Studio. Her background in brand strategy and visual design ensures that every project is not only beautiful but also deeply aligned with the client's vision and market goals. She believes that great design tells a story and builds lasting connections.",
     linkedin: 'https://www.linkedin.com/in/your-profile',
     image: 'https://picsum.photos/400/401',
-    imageHint: 'professional woman',
+    imageHint: 'woman with children',
   },
 ];
 
@@ -29,7 +29,7 @@ export default function AboutPage() {
       <section className="text-center space-y-4">
         <h1 className="text-5xl font-bold tracking-tighter">About Us</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          We are a husband and wife team dedicated to crafting exceptional digital experiences. By blending cutting-edge technology with timeless design, we partner with clients to build their dreams into functional digital realities.
+          We are partners in life and work, dedicated to crafting exceptional digital experiences. By blending cutting-edge technology with timeless design, we partner with clients to build their dreams into functional digital realities.
         </p>
       </section>
 
