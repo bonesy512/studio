@@ -28,6 +28,7 @@ export default function Footer() {
               <ul className="space-y-2 text-muted-foreground">
                 <li><Link href="/" className="hover:text-foreground">Home</Link></li>
                 <li><Link href="/about" className="hover:text-foreground">About</Link></li>
+                <li><Link href="/services" className="hover:text-foreground">Services</Link></li>
                 <li><Link href="/portfolio" className="hover:text-foreground">Portfolio</Link></li>
                 <li><Link href="/pricing" className="hover:text-foreground">Pricing</Link></li>
                 <li><Link href="/book" className="hover:text-foreground">Book Now</Link></li>

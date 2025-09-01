@@ -2,23 +2,20 @@ import { Button } from '@/components/ui/button';
 import AISuggestion from '@/components/ai-suggestion';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ArrowRight } from 'lucide-react';
 
 const services = [
   {
-    title: 'Full Brand Identity',
-    description: 'A complete visual and strategic foundation. We cover brand strategy, logo design, visual systems, and comprehensive guidelines.',
+    title: 'Design & Branding',
+    description: 'Building enduring brands with comprehensive strategy, visual identity, and web design.',
   },
   {
-    title: 'AI Integration Strategy',
-    description: 'Unlock the power of artificial intelligence. We identify opportunities, develop a custom AI strategy, and create a roadmap for implementation.',
+    title: 'Technology & Development',
+    description: 'From custom apps to modernizing tech, we build functional, scalable digital realities.',
   },
   {
-    title: 'Technology Modernization',
-    description: 'Future-proof your infrastructure. Our team assesses your current tech stack, plans a migration to modern systems, and supports the execution.',
-  },
-  {
-    title: 'Paid Discovery & Roadmapping',
-    description: 'The perfect starting point for complex projects. We conduct an in-depth discovery process to deliver a strategic roadmap with actionable steps.',
+    title: 'AI & Strategic Consulting',
+    description: 'Harnessing AI honestly and charting a clear course forward with strategic roadmapping.',
   },
 ];
 
@@ -33,10 +30,10 @@ export default function Home() {
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold tracking-tighter">Who We Are</h2>
-        <div className="text-muted-foreground space-y-4">
-          <p>
-            Based in Austin, Texas, The Salt & Light Co. is a collective of designers, developers, and strategists who believe in the power of technology to reshape industries. We partner with forward-thinking companies to create category-defining brands, products, and AI-powered experiences. Our work is minimalist, our process is collaborative, and our results are transformative.
+        <h2 className="text-3xl font-bold tracking-tighter">Your Vision, Illuminated.</h2>
+        <div className="text-muted-foreground space-y-4 max-w-4xl">
+           <p>
+            At The Salt & Light Co., we partner with inspiring Austin businesses to transform bold ideas into tangible digital realities. From foundational branding that tells your unique story to sophisticated AI integrations that future-proof your operations, our work is a testament to honest craftsmanship and strategic guidance. We're here to be a light for your mission, building the digital tools you need to shine in Austin and beyond.
           </p>
           <p>
             Our pedigree includes founding successful ventures like{' '}
@@ -52,8 +49,13 @@ export default function Home() {
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-3xl font-bold tracking-tighter">Services & Areas of Focus</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <h2 className="text-3xl font-bold tracking-tighter">Services & Areas of Focus</h2>
+          <Button asChild variant="link" className="text-lg">
+            <Link href="/services">View All Services <ArrowRight className="ml-2 h-5 w-5" /></Link>
+          </Button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service) => (
             <Card key={service.title}>
               <CardHeader>
