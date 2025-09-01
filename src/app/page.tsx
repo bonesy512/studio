@@ -8,15 +8,15 @@ import { ArrowRight } from 'lucide-react';
 const services = [
   {
     title: 'Design & Branding',
-    description: 'Building enduring brands with comprehensive strategy, visual identity, and web design.',
+    description: 'A powerful brand is more than a logo. We build enduring brands through comprehensive strategy, visual identity, and web design that tells your unique story.',
   },
   {
     title: 'Technology & Development',
-    description: 'From custom apps to modernizing tech, we build functional, scalable digital realities.',
+    description: "From ambitious ideas to functional reality. We build and modernize custom apps, SaaS platforms, and other digital solutions that are scalable and built with excellence.",
   },
   {
     title: 'AI & Strategic Consulting',
-    description: 'Harnessing AI honestly and charting a clear course forward with strategic roadmapping.',
+    description: 'Harnessing AI honestly and charting a clear course forward. We demystify artificial intelligence, providing practical tools and strategic roadmapping to empower your business.',
   },
 ];
 
