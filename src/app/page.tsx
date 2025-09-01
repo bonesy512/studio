@@ -30,9 +30,9 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="space-y-6">
+      <section className="text-center space-y-6">
         <h2 className="text-3xl font-bold tracking-tighter">Your Vision, Illuminated.</h2>
-        <div className="text-muted-foreground space-y-4 max-w-4xl">
+        <div className="text-muted-foreground space-y-4 max-w-4xl mx-auto">
            <p>
             At The Salt & Light Co., we partner with inspiring Austin businesses to transform bold ideas into tangible digital realities. From foundational branding that tells your unique story to sophisticated AI integrations that future-proof your operations, our work is a testament to honest craftsmanship and strategic guidance. We're here to be a light for your mission, building the digital tools you need to shine in Austin and beyond.
           </p>
