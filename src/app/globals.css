@@ -74,13 +74,6 @@ body {
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Lora', serif;
   }
-  .glass-card {
-      @apply bg-card/50 border border-black/10 backdrop-blur-lg;
-  }
-
-  .dark .glass-card {
-      @apply bg-secondary/20 border border-white/10 backdrop-blur-lg;
-  }
 
   .glow-effect {
       position: absolute;
