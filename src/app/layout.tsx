@@ -64,6 +64,7 @@ export default function RootLayout({
       <body className="font-body antialiased relative">
         <div className="glow-effect top-[-20%] right-[-20%] h-2/3 w-2/3 bg-primary"></div>
         <div className="glow-effect bottom-[-20%] left-[-20%] h-2/3 w-2/3 bg-accent"></div>
+        <div className="lighthouse-bg" data-ai-hint="lighthouse"></div>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
