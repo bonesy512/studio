@@ -46,7 +46,7 @@ export default function Home() {
             and{' '}
             <a href="https://lazily.ai" target="_blank" rel="noopener noreferrer" className="text-primary-foreground underline">
               lazily.ai
-            </a>.
+            </a>. Learn more <Link href="/about" className="text-primary-foreground underline">about us</Link>.
           </p>
         </div>
       </section>
