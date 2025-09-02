@@ -43,6 +43,86 @@ async function GeneratedContent({ title, description }: { title: string; descrip
   )
 }
 
+function LandhackerContent() {
+  return (
+    <div className="space-y-8">
+      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+        <CardHeader>
+          <CardTitle>Project Overview</CardTitle>
+          <CardDescription>Redefining Land Investment with AI and Geospatial Intelligence</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">Landhacker.AI is a sophisticated, mobile-first PropTech and Geographic Information System (GIS) platform designed to provide professional real estate investors, developers, and researchers with a decisive analytical edge in the land investment market. It integrates large-scale property parcel data with AI-driven valuation tools and a multi-channel direct marketing suite to streamline deal analysis, site selection, and due diligence, ultimately transforming high-risk decisions into data-backed opportunities.</p>
+        </CardContent>
+      </Card>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader><CardTitle>Key Features</CardTitle></CardHeader>
+          <CardContent className="space-y-4">
+            <ul className="list-disc list-inside text-muted-foreground space-y-2">
+              <li>**Interactive Property Map Interface**: Utilizes Mapbox GL JS for a mobile-first, interactive map experience with parcel visualization.</li>
+              <li>**AI-Driven Analytics**: Integrates OpenAI for valuation, comparable sales prediction, and marketability scoring.</li>
+              <li>**Comprehensive Property Data**: Access to owner info, legal descriptions, tax data, and property history from sources like ReGrid.</li>
+              <li>**Skip Tracing & Multi-Property Tools**: Features for single and bulk parcel research and data export.</li>
+              <li>**User Account System**: Secure user management with Firebase Authentication, saved properties, and subscription tracking.</li>
+              <li>**One-Click Marketing Automation**: Suggests optimal buyer profiles and outreach methods.</li>
+            </ul>
+          </CardContent>
+        </Card>
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader><CardTitle>Technical Architecture & Stack</CardTitle></CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-1">
+              <h4 className="font-semibold text-primary">Frontend</h4>
+              <p className="text-sm text-muted-foreground">Mobile app built with React, TypeScript, Mapbox GL JS, Tailwind, and Zustand. Marketing site on Next.js 15.</p>
+            </div>
+            <div className="space-y-1">
+              <h4 className="font-semibold text-primary">Backend & Hosting</h4>
+              <p className="text-sm text-muted-foreground">Cloud-hosted on AWS, with a FastAPI backend for API endpoints and GIS data processing.</p>
+            </div>
+            <div className="space-y-1">
+              <h4 className="font-semibold text-primary">Database</h4>
+              <p className="text-sm text-muted-foreground">Large-scale database with 25 million+ records from ReGrid. Firebase Firestore for user data (GeoJSON for GIS).</p>
+            </div>
+             <div className="space-y-1">
+              <h4 className="font-semibold text-primary">Key Integrations</h4>
+              <p className="text-sm text-muted-foreground">Mapbox, ReGrid, OpenAI, Elevenlabs, Epixel, PayPal, and Resend.</p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+        <CardHeader><CardTitle>Strategic Impact & Business Model</CardTitle></CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">Landhacker.AI employs a powerful hybrid monetization model that includes a Freemium tier, Pay-Per-Use (tokens) for high-value actions, and a Subscription (SaaS) model for power users. The platform also features a built-in iBuyer funnel to generate proprietary deal flow and an affiliate program to drive user acquisition. A complete overhaul of the brand's social media identity was a critical strategic initiative to align with a professional B2B SaaS persona and correct previous "algorithmic poisoning."</p>
+        </CardContent>
+      </Card>
+      
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader><CardTitle>Development Status & Achievements</CardTitle></CardHeader>
+          <CardContent className="space-y-4">
+            <ul className="list-disc list-inside text-muted-foreground space-y-2">
+              <li>Marketing website is live, stable, and fully operational, built in-house saving significant cost.</li>
+              <li>Backend is fully developed with highly optimized APIs and a successful data import of 16.5 million records.</li>
+              <li>Mobile app has confirmed iPad compatibility, working chat, and has undergone UAT.</li>
+            </ul>
+          </CardContent>
+        </Card>
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader><CardTitle>Future Directions</CardTitle></CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">Immediate priorities include completing the remaining data migration, resolving regression bugs, and finalizing email and affiliate marketing integrations. Longer-term plans focus on expanding measurement tools, activating content marketing, and pursuing full Progressive Web App (PWA) functionality to solidify Landhacker.AI's position as a market leader.</p>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  )
+}
+
+
 function MvsContent() {
     return (
     <div className="space-y-8">
@@ -146,11 +226,11 @@ function VeilbreakersContent() {
           <CardHeader><CardTitle>Key Factions & Deities</CardTitle></CardHeader>
           <CardContent className="space-y-4">
              <div className="space-y-1">
-                <h4 className="font-semibold">Deities</h4>
+                <h4 className="font-semibold text-primary">Deities</h4>
                 <p className="text-sm text-muted-foreground">**Aleara (Life/Balance)**, **Klydos (Chaos/Destruction)**, and **Donegal (Creation/Wagers)** shape the cosmic struggle.</p>
              </div>
              <div className="space-y-1">
-                <h4 className="font-semibold">Major Factions</h4>
+                <h4 className="font-semibold text-primary">Major Factions</h4>
                  <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
                     <li>**The Orders of Aleara:** Holy knights, clerics, and druids opposing Klydos.</li>
                     <li>**The Grey Wizards of Sambor:** A cabal harnessing chaotic Aether magic.</li>
@@ -218,6 +298,7 @@ export default function PortfolioProjectPage({ params }: { params: { slug: strin
 
   const isMvs = project.slug === 'mystic-vault-society';
   const isVeilbreakers = project.slug === 'the-veilbreakers-crusade';
+  const isLandhacker = project.slug === 'landhacker-ai';
 
   return (
     <div className="space-y-12">
@@ -258,7 +339,8 @@ export default function PortfolioProjectPage({ params }: { params: { slug: strin
         <Suspense fallback={<ContentSkeleton />}>
           {isMvs && <MvsContent />}
           {isVeilbreakers && <VeilbreakersContent />}
-          {!isMvs && !isVeilbreakers && <GeneratedContent title={project.title} description={project.description} />}
+          {isLandhacker && <LandhackerContent />}
+          {!isMvs && !isVeilbreakers && !isLandhacker && <GeneratedContent title={project.title} description={project.description} />}
         </Suspense>
         
         <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
@@ -279,5 +361,3 @@ export default function PortfolioProjectPage({ params }: { params: { slug: strin
     </div>
   );
 }
-
-    
