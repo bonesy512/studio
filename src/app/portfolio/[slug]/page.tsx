@@ -2,12 +2,13 @@
 import { projects } from '@/lib/portfolio-data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink, Loader2 } from 'lucide-react';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { generateProjectContent } from '@/ai/flows/ai-portfolio-generation';
 import { Suspense } from 'react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 // This function tells Next.js which slugs to pre-render at build time
 export async function generateStaticParams() {
@@ -75,11 +76,124 @@ function MvsContent() {
   )
 }
 
+function VeilbreakersContent() {
+  const campaignArcs = [
+    {
+      title: "Arc 1: The Frozen Front (Levels 1-5)",
+      goal: "Survival, combat against new monstrous threats, and discovering the shocking truth behind the new enemies.",
+      adventures: [
+        "Lost in the Fog (Level 1-2): Characters are thrust into a battle on the Thin Strip of Plain, separated from allies by a supernatural fog, and encounter Chaos Thralls and a regenerating Frost Troll.",
+        "The Giant's Slides (Level 2-3): Sabotage frost giant deployment slides in the Frostbite Mountains.",
+        "The Source of Corruption (Level 4-5): Assault Fort Kalos, a Grey Wizard laboratory creating Chaos Thralls, uncovering Duke Grimhorn's treachery."
+      ]
+    },
+    {
+      title: "Arc 2: Shadows and Secrets (Levels 6-10)",
+      goal: "Espionage, navigating Zel'Drean political landscape, uncovering Grimhorn's betrayal, forging alliances, and delving into Aether mysteries.",
+      adventures: [
+        "The Sacred Grove's Silence (Level 6-7): Investigate a spiritual sickness in Aleara's Sacred Grove, confirming the Duke's complicity.",
+        "The Alien Captive (Level 7-8): Infiltrate a Grimhorn lodge to rescue a captured Valkrunian, revealing they are refugees and ancient enemies of the Grey Wizards.",
+        "Assault on the Aether Nexus (Level 8-10): Lead a joint strike force to destroy the Citadel of Whispering Iron, which houses a portal network and superweapon."
+      ]
+    },
+    {
+      title: "Arc 3: The Betrayal of Binsmuth (Levels 11-15)",
+      goal: "Political scheming erupts into open civil war, with Grimhorn making a move for the throne while Klydos's armies exploit the chaos.",
+      adventures: [
+        "The Duke's Gambit (Level 11-12): Gather definitive proof of Duke Grimhorn's treason during a political summit, surviving an assassination attempt.",
+        "The Siege of Godsdown (Level 13-14): Defend the holy city of Godsdown from Grimhorn's army, leading to a heroic sacrifice.",
+        "Confronting Treachery (Level 14-15): Publicly try Duke Grimhorn for high treason, leading to his coup attempt and a final confrontation."
+      ]
+    },
+    {
+      title: "Arc 4: Rise of the Veilbreaker (Levels 16-20)",
+      goal: "The Grey Wizards shatter the barrier between worlds. Heroes lead an alliance into the heart of the Aether storm for a final, epic confrontation with a god.",
+      adventures: [
+        "Into Nemordia (Level 16-17): Lead the united army into the Aether-scarred lands of Nemordia to stop the ritual at its source.",
+        "The Ritual of the Aether (Level 17-19): Breach the Threshold, a violent tear in reality, to eliminate the two Grey Wizard Archons conducting the final ritual.",
+        "The Lord of Tempests (Level 19-20): Face the Avatar of Klydos in a multi-stage boss battle, where the wielder of Nightshard makes a final, world-altering choice."
+      ]
+    }
+  ];
+
+  return (
+    <div className="space-y-8">
+      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+        <CardHeader>
+          <CardTitle>Campaign Overview</CardTitle>
+          <CardDescription>A heroic fantasy adventure for D&D 5e, taking characters from level 1 to 20 in the frozen world of Binsmuth.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">The Veilbreakers Crusade is set in the harsh, frozen kingdom of Zel'Drea, a bastion against the encroaching chaos of the god Klydos. The campaign blends themes of environmental hardship, the horrors of war, political betrayal, and the struggle of faith against despair as players confront both external monstrous threats and internal treachery.</p>
+        </CardContent>
+      </Card>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader><CardTitle>Core Conflict & Themes</CardTitle></CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-muted-foreground">The central conflict is the escalating war between Zel'Drea and Klydos, the Lord of Tempests. Aided by the fanatical Grey Wizards of Sambor, Klydos unleashes twisted Chaos Thralls and a supernatural cold. Internally, the kingdom is fractured by the betrayal of Duke Kendrick Grimhorn, who seeks to usurp the throne.</p>
+            <ul className="list-disc list-inside text-muted-foreground space-y-2">
+              <li>**Environmental Hardship:** Survival is a constant challenge against the biting cold.</li>
+              <li>**Horrors of War:** A struggle against unnatural, asymmetrical creatures.</li>
+              <li>**Corruption of Power:** The Aether and the sentient sword Nightshard tempt heroes with power at a moral cost.</li>
+              <li>**Political Intrigue:** Navigating a treacherous court of spies and assassins.</li>
+              <li>**Faith vs. Despair:** Maintaining hope in a dying world.</li>
+            </ul>
+          </CardContent>
+        </Card>
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader><CardTitle>Key Factions & Deities</CardTitle></CardHeader>
+          <CardContent className="space-y-4">
+             <div className="space-y-1">
+                <h4 className="font-semibold">Deities</h4>
+                <p className="text-sm text-muted-foreground">**Aleara (Life/Balance)**, **Klydos (Chaos/Destruction)**, and **Donegal (Creation/Wagers)** shape the cosmic struggle.</p>
+             </div>
+             <div className="space-y-1">
+                <h4 className="font-semibold">Major Factions</h4>
+                 <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                    <li>**The Orders of Aleara:** Holy knights, clerics, and druids opposing Klydos.</li>
+                    <li>**The Grey Wizards of Sambor:** A cabal harnessing chaotic Aether magic.</li>
+                    <li>**The Forces of Klydos:** A monstrous army of giants, trolls, and alien Valkrunians.</li>
+                    <li>**Duchy Grimhorn:** The treacherous house led by the ambitious Duke Kendrick Grimhorn.</li>
+                 </ul>
+             </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+        <CardHeader>
+            <CardTitle>Campaign Structure: A Four-Arc Saga</CardTitle>
+            <CardDescription>The narrative unfolds across four distinct arcs with milestone-based progression.</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Accordion type="single" collapsible className="w-full">
+            {campaignArcs.map((arc, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger>{arc.title}</AccordionTrigger>
+                <AccordionContent className="space-y-4">
+                  <p className="font-semibold text-primary">{arc.goal}</p>
+                  <ul className="list-disc list-inside text-muted-foreground space-y-2 pl-4">
+                    {arc.adventures.map((adventure, advIndex) => (
+                      <li key={advIndex}>{adventure}</li>
+                    ))}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
+
 function ContentSkeleton() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {[...Array(3)].map((_, i) => (
-        <Card key={i}>
+        <Card key={i} className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
           <CardHeader>
             <div className="h-6 w-3/4 bg-muted rounded-md animate-pulse"></div>
           </CardHeader>
@@ -103,6 +217,7 @@ export default function PortfolioProjectPage({ params }: { params: { slug: strin
   }
 
   const isMvs = project.slug === 'mystic-vault-society';
+  const isVeilbreakers = project.slug === 'the-veilbreakers-crusade';
 
   return (
     <div className="space-y-12">
@@ -141,7 +256,9 @@ export default function PortfolioProjectPage({ params }: { params: { slug: strin
       
       <main className="space-y-8">
         <Suspense fallback={<ContentSkeleton />}>
-          {isMvs ? <MvsContent /> : <GeneratedContent title={project.title} description={project.description} />}
+          {isMvs && <MvsContent />}
+          {isVeilbreakers && <VeilbreakersContent />}
+          {!isMvs && !isVeilbreakers && <GeneratedContent title={project.title} description={project.description} />}
         </Suspense>
         
         <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
@@ -162,3 +279,5 @@ export default function PortfolioProjectPage({ params }: { params: { slug: strin
     </div>
   );
 }
+
+    
