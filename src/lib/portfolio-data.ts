@@ -44,15 +44,15 @@ export const projects = [
   {
     title: 'Mystic Vault Society',
     slug: 'mystic-vault-society',
-    description: 'Detailed project description and images coming soon.',
+    description: "Marketing and brand strategy for an independent publisher's debut fantasy novel launch.",
     imageUrl: 'https://picsum.photos/600/405',
     imageHint: 'mystical community brand',
-    link: '#',
+    link: 'https://www.mysticvaultsociety.com',
   },
   {
     title: 'The Veilbreakers Crusade',
     slug: 'the-veilbreakers-crusade',
-    description: 'A Dungeons & Dragons 5e campaign book and creative IP.',
+    description: 'A Dungeons & Dragons 5e campaign book and creative IP developed by our founders.',
     imageUrl: 'https://picsum.photos/600/406',
     imageHint: 'fantasy book cover',
     link: '#',
