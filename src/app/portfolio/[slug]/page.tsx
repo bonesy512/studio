@@ -56,20 +56,21 @@ function LandhackerContent() {
         </CardContent>
       </Card>
 
+      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+        <CardHeader><CardTitle>Key Features</CardTitle></CardHeader>
+        <CardContent className="space-y-4">
+          <ul className="list-disc list-inside text-muted-foreground space-y-2">
+            <li>**Interactive Property Map Interface**: Utilizes Mapbox GL JS for an interactive map experience with parcel visualization.</li>
+            <li>**AI-Driven Analytics**: Integrates OpenAI for valuation, comparable sales prediction, and marketability scoring.</li>
+            <li>**Comprehensive Property Data**: Access to owner info, legal descriptions, tax data, and property history from sources like ReGrid.</li>
+            <li>**Skip Tracing & Multi-Property Tools**: Features for single and bulk parcel research and data export.</li>
+            <li>**User Account System**: Secure user management with Firebase Authentication, saved properties, and subscription tracking.</li>
+            <li>**One-Click Marketing Automation**: Suggests optimal buyer profiles and outreach methods.</li>
+          </ul>
+        </CardContent>
+      </Card>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
-          <CardHeader><CardTitle>Key Features</CardTitle></CardHeader>
-          <CardContent className="space-y-4">
-            <ul className="list-disc list-inside text-muted-foreground space-y-2">
-              <li>**Interactive Property Map Interface**: Utilizes Mapbox GL JS for a mobile-first, interactive map experience with parcel visualization.</li>
-              <li>**AI-Driven Analytics**: Integrates OpenAI for valuation, comparable sales prediction, and marketability scoring.</li>
-              <li>**Comprehensive Property Data**: Access to owner info, legal descriptions, tax data, and property history from sources like ReGrid.</li>
-              <li>**Skip Tracing & Multi-Property Tools**: Features for single and bulk parcel research and data export.</li>
-              <li>**User Account System**: Secure user management with Firebase Authentication, saved properties, and subscription tracking.</li>
-              <li>**One-Click Marketing Automation**: Suggests optimal buyer profiles and outreach methods.</li>
-            </ul>
-          </CardContent>
-        </Card>
         <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
           <CardHeader><CardTitle>Technical Architecture & Stack</CardTitle></CardHeader>
           <CardContent className="space-y-4">
@@ -91,12 +92,108 @@ function LandhackerContent() {
             </div>
           </CardContent>
         </Card>
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader><CardTitle>Strategic Impact & Business Model</CardTitle></CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">Landhacker.AI employs a powerful hybrid monetization model that includes a Freemium tier, Pay-Per-Use (tokens) for high-value actions, and a Subscription (SaaS) model for power users. The platform also features a built-in iBuyer funnel to generate proprietary deal flow and an affiliate program to drive user acquisition. A complete overhaul of the brand's social media identity was a critical strategic initiative to align with a professional B2B SaaS persona and correct previous "algorithmic poisoning."</p>
+          </CardContent>
+        </Card>
       </div>
 
       <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
-        <CardHeader><CardTitle>Strategic Impact & Business Model</CardTitle></CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground">Landhacker.AI employs a powerful hybrid monetization model that includes a Freemium tier, Pay-Per-Use (tokens) for high-value actions, and a Subscription (SaaS) model for power users. The platform also features a built-in iBuyer funnel to generate proprietary deal flow and an affiliate program to drive user acquisition. A complete overhaul of the brand's social media identity was a critical strategic initiative to align with a professional B2B SaaS persona and correct previous "algorithmic poisoning."</p>
+          <CardHeader>
+              <CardTitle>Comprehensive Marketing Strategy Rollout</CardTitle>
+              <CardDescription>Rebranding for Professional Growth</CardDescription>
+          </CardHeader>
+          <CardContent>
+              <p className="text-muted-foreground">The Landhacker.AI marketing strategy is undergoing a comprehensive overhaul to rectify a significant misalignment between the platform's sophisticated, data-driven capabilities and its previous public-facing brand identity on Facebook. The new blueprint establishes Landhacker.AI as an authoritative, analytical, and forward-thinking B2B SaaS brand for professional real estate investors and developers.</p>
+          </CardContent>
+      </Card>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader>
+            <CardTitle>New Brand Identity</CardTitle>
+            <CardDescription>Building Trust and Authority</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div>
+              <h4 className="font-semibold text-primary">Mission and Messaging</h4>
+              <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1 mt-1">
+                <li>**Mission:** "To empower land investment professionals with AI-driven geospatial intelligence, transforming high-risk decisions into data-backed opportunities".</li>
+                <li>**Pillars:** De-risk Investments, Value with Confidence, Accelerate Workflow, Unlock Hidden Opportunities.</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-primary">Voice and Tone</h4>
+              <p className="text-sm text-muted-foreground mt-1">Authoritative, Analytical, and Forward-Thinking.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-primary">Visual Lexicon</h4>
+              <p className="text-sm text-muted-foreground mt-1">Clean, modern, and data-centric, with a professional color palette (Pine Green/Navy, Charcoal/Teal, Amber/Goldenrod) and typography (Montserrat/Poppins, Roboto/Lato).</p>
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader>
+            <CardTitle>Content Authority Engine</CardTitle>
+            <CardDescription>A Multi-Pillar Strategy</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <ul className="list-disc list-inside text-muted-foreground space-y-2 text-sm">
+                <li>**Market Intelligence & Data-Driven Insights:** Gated reports and infographics to build authority.</li>
+                <li>**Product-in-Action & Use Case Mastery:** "Workflow Wednesday" videos and carousel case studies.</li>
+                <li>**Educational Deep Dives & Methodologies:** "Land Valuation Masterclass" series and downloadable checklists.</li>
+                <li>**Client Success Blueprints:** Testimonials and case studies to provide social proof.</li>
+                <li>**Structured Cadence:** A consistent weekly publishing schedule across all pillars.</li>
+            </ul>
+          </CardContent>
+        </Card>
+      </div>
+
+       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader>
+            <CardTitle>Paid Media Accelerator</CardTitle>
+            <CardDescription>A Full-Funnel Advertising Strategy</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-muted-foreground text-sm">A strategic paid media program on Facebook to drive immediate lead generation and scale audience growth through a full-funnel approach (Top, Middle, Bottom).</p>
+            <ul className="list-disc list-inside text-muted-foreground space-y-2 text-sm">
+                <li>**Advanced Targeting:** Utilizes high-value customer Lookalike Audiences, detailed job title/interest layering, and website custom audiences.</li>
+                <li>**Optimized Creative:** Adheres to the new B2B brand identity with professional visuals and benefit-driven copy.</li>
+            </ul>
+          </CardContent>
+        </Card>
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader>
+            <CardTitle>Community and Engagement</CardTitle>
+            <CardDescription>Building a Professional Network</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-muted-foreground text-sm">The strategy focuses on building an exclusive, high-value professional network on Facebook, transforming customers into brand advocates through targeted engagement and community activation tactics.</p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+        <CardHeader>
+          <CardTitle>Implementation Roadmap & KPIs</CardTitle>
+          <CardDescription>A 90-Day Transformation Plan</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+           <div className="space-y-1">
+              <h4 className="font-semibold text-primary">Phase 1: Foundation & Rebranding (Days 1-30)</h4>
+              <p className="text-sm text-muted-foreground">Finalize messaging and visual identity, overhaul the Facebook page, and produce initial content.</p>
+            </div>
+             <div className="space-y-1">
+              <h4 className="font-semibold text-primary">Phase 2: Content Engine Launch (Days 31-60)</h4>
+              <p className="text-sm text-muted-foreground">Execute the full content calendar, manage the private group, and launch Top-of-Funnel paid campaigns.</p>
+            </div>
+             <div className="space-y-1">
+              <h4 className="font-semibold text-primary">Phase 3: Paid Media Activation (Days 61-90)</h4>
+              <p className="text-sm text-muted-foreground">Launch Middle and Bottom-of-Funnel campaigns, focusing on CPA and ROAS.</p>
+            </div>
         </CardContent>
       </Card>
       
@@ -126,32 +223,68 @@ function LandhackerContent() {
 function MvsContent() {
     return (
     <div className="space-y-8">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+        <CardHeader>
+          <CardTitle>Project Overview</CardTitle>
+          <CardDescription>Empowering Independent SFF Authors with Radical Transparency</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">Mystic Vault Society (MVS) is a fee-for-service publishing company founded with the core mission of promoting, supporting, and guiding science fiction and fantasy (SFF) authors. It aims to transform author skepticism toward fee-for-service models by embracing radical transparency and community empowerment, establishing itself as an indispensable, trusted partner for serious independent SFF authors.</p>
+        </CardContent>
+      </Card>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
-          <CardHeader><CardTitle>Project Goal</CardTitle></CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">To launch a new fee-for-service publishing company, Mystic Vault Society (MVS), dedicated to empowering independent science fiction and fantasy authors. The core challenge was to build trust and overcome author skepticism of fee-for-service models by establishing a brand rooted in radical transparency, community, and genuine partnership.</p>
+          <CardHeader><CardTitle>Core Philosophy & Business Model</CardTitle></CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-muted-foreground">MVS operates on a model of **radical transparency**. Authors are the publishers, retaining 100% of their rights and royalties, with full creative control. Revenue comes directly from professional services provided, not from a percentage of book sales, a model clearly articulated to differentiate MVS from predatory vanity presses.</p>
+            <ul className="list-disc list-inside text-muted-foreground space-y-2 text-sm">
+                <li>100% Author Rights & Royalties</li>
+                <li>Full Creative Control</li>
+                <li>Transparent Fee-for-Service</li>
+                <li>Selective, Partnership-based Approach</li>
+            </ul>
           </CardContent>
         </Card>
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10 lg:col-span-2">
-          <CardHeader><CardTitle>Our Solution</CardTitle></CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">We developed a comprehensive brand strategy and marketing plan for MVS and its debut novel, *Rise of the Veilbreaker*. Our work focused on establishing the "Veilbreaker" thesis—a core narrative about cutting through the fear and confusion of the indie publishing world. This included creating a detailed author persona analysis, a content-led marketing strategy with four key pillars, and a community-building funnel to guide authors from passive observers to loyal clients. The strategy culminated in the successful launch of the author's book and the establishment of MVS as a credible, transparent partner in the SFF community.</p>
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader><CardTitle>Services Offered</CardTitle></CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-muted-foreground">MVS provides a suite of a la carte professional services to guide authors through every stage of the publishing process.</p>
+            <ul className="list-disc list-inside text-muted-foreground space-y-2 text-sm">
+                <li>**Expert Editorial Services:** Developmental, line, and proofreading.</li>
+                <li>**Publishing & Distribution:** Cover design consultation, formatting, global distribution via IngramSpark.</li>
+                <li>**Marketing & Author Platform:** Tailored launch plans, social media tactics, and professional author webpages.</li>
+            </ul>
           </CardContent>
         </Card>
       </div>
-       <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
-        <CardHeader><CardTitle>Key Deliverables & Technologies</CardTitle></CardHeader>
+
+      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+        <CardHeader><CardTitle>Strategic Marketing & Community Building</CardTitle></CardHeader>
         <CardContent>
-          <ul className="list-disc list-inside text-muted-foreground space-y-2">
-            <li>**Brand & Marketing Strategy:** Developed a comprehensive go-to-market plan, including target audience personas, a content-led strategy, and a community engagement funnel.</li>
-            <li>**Website Development:** Built the central online hub on WordPress with WooCommerce for direct-to-fan sales and content delivery.</li>
-            <li>**Lead Generation:** Created persona-targeted lead magnets and an email newsletter strategy to build a community of authors.</li>
-            <li>**Social Media Campaign:** Executed a multi-platform social media strategy (Instagram, Facebook, YouTube, Reddit) focused on authentic engagement and value-driven content.</li>
-            <li>**Distribution & Logistics:** Set up a hybrid print-on-demand model using KDP Print and IngramSpark, and managed ISBN acquisition and e-book distribution via KDP Select.</li>
-          </ul>
+          <p className="text-muted-foreground">Marketing is driven by a content-led strategy that provides immense value upfront. By organizing content into four key pillars (The Publishing Quest, Craft & World-Building, The Business of Writing, The Society Ledger), MVS attracts and educates its target audience. Community is built through targeted lead magnets, an exclusive email newsletter, and deep engagement on platforms like Instagram, Facebook (including a private "Outer Circle" group), YouTube, and Reddit.</p>
         </CardContent>
       </Card>
+      
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader><CardTitle>Operational Foundations</CardTitle></CardHeader>
+          <CardContent className="space-y-4">
+            <ul className="list-disc list-inside text-muted-foreground space-y-2">
+              <li>**Legal:** Formally established as an LLC in Texas for liability protection and credibility.</li>
+              <li>**ISBNs:** MVS purchases and owns its ISBNs directly from Bowker to be the official publisher.</li>
+              <li>**Distribution:** A hybrid print-on-demand model uses KDP for Amazon sales and IngramSpark for premium editions and wider distribution.</li>
+              <li>**Technology:** The website is built on WordPress with WooCommerce for direct-to-fan sales and content delivery.</li>
+            </ul>
+          </CardContent>
+        </Card>
+        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+          <CardHeader><CardTitle>Launch Success: *Rise of the Veilbreaker*</CardTitle></CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">The marketing and brand strategy culminated in the successful debut launch of the company's first author project, *Rise of the Veilbreaker*, on September 1st, 2025. The book is now available on major platforms like Amazon and Barnes & Noble, validating the MVS model and establishing its credibility within the SFF community.</p>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   )
 }
