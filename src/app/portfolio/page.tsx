@@ -4,58 +4,8 @@ import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { projects } from '@/lib/portfolio-data';
 
-const projects = [
-  {
-    title: 'ProJob',
-    description: 'Detailed project description and images coming soon.',
-    imageUrl: 'https://picsum.photos/600/400',
-    imageHint: 'modern tech application',
-    link: '#',
-  },
-  {
-    title: 'Clevr Sol',
-    description: 'Detailed project description and images coming soon.',
-    imageUrl: 'https://picsum.photos/600/401',
-    imageHint: 'solution branding',
-    link: '#',
-  },
-  {
-    title: 'Wakesurf Saloon',
-    description: 'Detailed project description and images coming soon.',
-    imageUrl: 'https://picsum.photos/600/402',
-    imageHint: 'recreational brand',
-    link: '#',
-  },
-  {
-    title: 'Landhacker.AI',
-    description: 'AI-powered platform for land investment analysis.',
-    imageUrl: 'https://picsum.photos/600/403',
-    imageHint: 'AI data analysis',
-    link: 'https://landhacker.ai',
-  },
-  {
-    title: 'Lazily.AI',
-    description: 'AI tools to streamline and automate workflows.',
-    imageUrl: 'https://picsum.photos/600/404',
-    imageHint: 'automation software',
-    link: 'https://lazily.ai',
-  },
-  {
-    title: 'Mystic Vault Society',
-    description: 'Detailed project description and images coming soon.',
-    imageUrl: 'https://picsum.photos/600/405',
-    imageHint: 'mystical community brand',
-    link: '#',
-  },
-  {
-    title: 'The Veilbreakers Crusade',
-    description: 'A Dungeons & Dragons 5e campaign book and creative IP.',
-    imageUrl: 'https://picsum.photos/600/406',
-    imageHint: 'fantasy book cover',
-    link: '#',
-  },
-];
 
 export default function PortfolioPage() {
   return (
@@ -98,7 +48,7 @@ export default function PortfolioPage() {
             </CardContent>
             <CardFooter>
               <Button asChild variant="secondary" className="w-full">
-                <Link href="#">Learn More</Link>
+                <Link href={`/portfolio/${project.slug}`}>Learn More</Link>
               </Button>
             </CardFooter>
           </Card>
