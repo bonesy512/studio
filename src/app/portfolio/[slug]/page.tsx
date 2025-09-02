@@ -5,7 +5,9 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Loader2 } from 'lucide-react';
+import { generateProjectContent } from '@/ai/flows/ai-portfolio-generation';
+import { Suspense } from 'react';
 
 // This function tells Next.js which slugs to pre-render at build time
 export async function generateStaticParams() {
@@ -13,6 +15,52 @@ export async function generateStaticParams() {
     slug: project.slug,
   }));
 }
+
+async function GeneratedContent({ title, description }: { title: string; description: string }) {
+  const content = await generateProjectContent({ title, description });
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <Card>
+        <CardHeader><CardTitle>Project Goal</CardTitle></CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">{content.projectGoal}</p>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader><CardTitle>Our Solution</CardTitle></CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">{content.ourSolution}</p>
+        </CardContent>
+      </Card>
+       <Card>
+        <CardHeader><CardTitle>Technologies</CardTitle></CardHeader>
+        <CardContent>
+          <p className="text-muted-foreground">{content.technologies}</p>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
+
+function ContentSkeleton() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[...Array(3)].map((_, i) => (
+        <Card key={i}>
+          <CardHeader>
+            <div className="h-6 w-3/4 bg-muted rounded-md animate-pulse"></div>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            <div className="h-4 w-full bg-muted rounded-md animate-pulse"></div>
+            <div className="h-4 w-full bg-muted rounded-md animate-pulse"></div>
+            <div className="h-4 w-5/6 bg-muted rounded-md animate-pulse"></div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  )
+}
+
 
 export default function PortfolioProjectPage({ params }: { params: { slug: string } }) {
   const project = projects.find((p) => p.slug === params.slug);
@@ -57,26 +105,9 @@ export default function PortfolioProjectPage({ params }: { params: { slug: strin
       </header>
       
       <main className="space-y-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card>
-            <CardHeader><CardTitle>Project Goal</CardTitle></CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Detailed project goal will be displayed here soon.</p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader><CardTitle>Our Solution</CardTitle></CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">A breakdown of the solution we provided will be displayed here soon.</p>
-            </CardContent>
-          </Card>
-           <Card>
-            <CardHeader><CardTitle>Technologies</CardTitle></CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">The technologies used for this project will be listed here soon.</p>
-            </CardContent>
-          </Card>
-        </div>
+        <Suspense fallback={<ContentSkeleton />}>
+          <GeneratedContent title={project.title} description={project.description} />
+        </Suspense>
         
         <Card>
             <CardHeader><CardTitle>Project Showcase</CardTitle></CardHeader>
