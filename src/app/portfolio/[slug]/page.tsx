@@ -80,7 +80,7 @@ export default function PortfolioProjectPage({ params }: { params: { slug: strin
             </Link>
           </Button>
         </div>
-        <div className="relative w-full h-96 rounded-lg overflow-hidden border">
+        <Card className="relative w-full h-96 rounded-lg overflow-hidden border">
            <Image
             src={project.imageUrl}
             alt={`Hero image for ${project.title}`}
@@ -88,7 +88,7 @@ export default function PortfolioProjectPage({ params }: { params: { slug: strin
             className="object-cover"
             data-ai-hint={project.imageHint}
           />
-        </div>
+        </Card>
         <div className="flex justify-between items-start">
             <div>
                 <h1 className="text-5xl font-bold tracking-tighter">{project.title}</h1>
