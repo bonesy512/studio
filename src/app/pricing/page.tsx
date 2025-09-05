@@ -8,9 +8,9 @@ const designAndBranding = {
   title: 'Design & Branding',
   icon: Palette,
   items: [
-    { name: 'Logo Design & Style Guide', price: '$2,800' },
-    { name: 'Full Brand Identity System', price: '$3,700' },
-    { name: 'UI/UX for Web & Mobile', price: '$4,500' },
+    { name: 'Logo Design & Style Guide', price: '$2,800+' },
+    { name: 'Full Brand Identity System', price: '$3,700+' },
+    { name: 'UI/UX for Web & Mobile', price: '$4,500+' },
   ],
   isActionable: true,
 };
@@ -19,8 +19,8 @@ const webAndApp = {
   title: 'Web & App Development',
   icon: Code,
   items: [
-    { name: 'Marketing Website (CMS)', price: '$7,500' },
-    { name: 'E-commerce Store', price: '$12,000' },
+    { name: 'Marketing Website (CMS)', price: '$7,500+' },
+    { name: 'E-commerce Store', price: '$12,000+' },
     { name: 'Custom App / SaaS MVP', price: '$25,000+' },
   ],
   isActionable: false,
@@ -30,8 +30,8 @@ const aiAndConsulting = {
   title: 'AI & Consulting',
   icon: BrainCircuit,
   items: [
-    { name: 'AI Integration (AaaS)', price: '$8,000' },
-    { name: 'Custom AI Agent Development', price: '$15,000' },
+    { name: 'AI Integration (AaaS)', price: '$8,000+' },
+    { name: 'Custom AI Agent Development', price: '$15,000+' },
     { name: 'Paid Discovery & Roadmapping', price: '$3,000' },
   ],
   isActionable: true,
