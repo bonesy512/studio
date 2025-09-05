@@ -34,7 +34,7 @@ export default function PortfolioPage() {
               <div className="flex justify-between items-start">
                   <div>
                     <CardTitle>{project.title}</CardTitle>
-                    <CardDescription>{project.description}</CardDescription>
+                    <CardDescription className="pt-2">{project.description}</CardDescription>
                   </div>
                   {project.link !== '#' && (
                     <Link href={project.link} target="_blank" rel="noopener noreferrer" className="shrink-0 ml-4">
