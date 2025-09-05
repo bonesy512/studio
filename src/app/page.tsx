@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div className="space-y-24">
       <section className="text-center space-y-4">
-        <h1 className="text-5xl font-bold tracking-tighter">The Salt & Light Co.</h1>
+        <h1 className="text-5xl font-bold tracking-tighter">Schustereit & Co.</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           A high-end design, technology, and AI consultancy for ambitious brands. We build what's next.
         </p>
@@ -34,7 +34,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold tracking-tighter">Your Vision, Illuminated.</h2>
         <div className="text-muted-foreground space-y-4 max-w-4xl mx-auto">
            <p>
-            At The Salt & Light Co., we partner with inspiring Austin businesses to transform bold ideas into tangible digital realities. From foundational branding that tells your unique story to sophisticated AI integrations that future-proof your operations, our work is a testament to honest craftsmanship and strategic guidance. We're here to be a light for your mission, building the digital tools you need to shine in Austin and beyond.
+            At Schustereit & Co., we partner with inspiring Austin businesses to transform bold ideas into tangible digital realities. From foundational branding that tells your unique story to sophisticated AI integrations that future-proof your operations, our work is a testament to honest craftsmanship and strategic guidance. We're here to be a light for your mission, building the digital tools you need to shine in Austin and beyond.
           </p>
           <p>
             Our pedigree includes founding successful ventures like{' '}

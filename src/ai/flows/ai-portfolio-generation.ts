@@ -46,7 +46,7 @@ const prompt = ai.definePrompt({
   name: 'generateProjectContentPrompt',
   input: {schema: GenerateProjectContentInputSchema},
   output: {schema: GenerateProjectContentOutputSchema},
-  prompt: `You are an expert project manager and copywriter for a high-end design and technology consultancy, The Salt & Light Studio.
+  prompt: `You are an expert project manager and copywriter for a high-end design and technology consultancy, Schustereit & Co.
 
   Your task is to generate compelling case study content for a portfolio project. Based on the project title and description, you will write:
   1.  **Project Goal:** A paragraph that clearly articulates the primary objective of the project. What was the client trying to achieve? What problem were we solving for them?
