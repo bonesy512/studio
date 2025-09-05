@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="py-6 text-center text-muted-foreground text-sm">
-          <p>&copy; {currentYear || new Date().getFullYear()} Schustereit & Co. All Rights Reserved. | Austin, Texas</p>
+          <p>&copy; {currentYear} Schustereit & Co. All Rights Reserved. | Austin, Texas</p>
         </div>
       </div>
     </footer>
