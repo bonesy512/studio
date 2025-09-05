@@ -43,11 +43,15 @@ export default function Footer() {
           </div>
         </div>
         <div className="py-6 text-center text-muted-foreground text-sm">
-          {currentYear ? (
-            <p>&copy; {currentYear} Schustereit & Co. All Rights Reserved. | Austin, Texas</p>
-          ) : (
-            <div className="h-5" /> // Placeholder to prevent layout shift
-          )}
+          <p className="h-5">
+            {currentYear ? (
+              <span>&copy; {currentYear} Schustereit & Co. All Rights Reserved. | Austin, Texas</span>
+            ) : (
+              // This space is reserved, but empty on the server, preventing layout shift
+              // and guaranteeing the same <p> tag is rendered on both server and client.
+              <>&nbsp;</>
+            )}
+          </p>
         </div>
       </div>
     </footer>
