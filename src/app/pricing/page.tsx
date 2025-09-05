@@ -8,8 +8,8 @@ const designAndBranding = {
   title: 'Design & Branding',
   icon: Palette,
   items: [
-    { name: 'Logo Design & Style Guide', price: '$2,800+' },
-    { name: 'Full Brand Identity System', price: '$3,700+' },
+    { name: 'Logo Design & Style Guide', price: '$2,500+' },
+    { name: 'Full Brand Identity System', price: '$3,500+' },
     { name: 'UI/UX for Web & Mobile', price: '$4,500+' },
   ],
   isActionable: true,
