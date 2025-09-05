@@ -43,7 +43,11 @@ export default function Footer() {
           </div>
         </div>
         <div className="py-6 text-center text-muted-foreground text-sm">
-          <p>&copy; {currentYear} Schustereit & Co. All Rights Reserved. | Austin, Texas</p>
+          {currentYear ? (
+            <p>&copy; {currentYear} Schustereit & Co. All Rights Reserved. | Austin, Texas</p>
+          ) : (
+            <div className="h-5" /> // Placeholder to prevent layout shift
+          )}
         </div>
       </div>
     </footer>
