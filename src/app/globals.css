@@ -14,22 +14,22 @@ body {
     --card-foreground: 215 28% 17%;
     --popover: 48 33% 94%;
     --popover-foreground: 215 28% 17%;
-    --primary: 214 39% 28%; /* Deep, trustworthy navy blue */
+    --primary: 215 45% 35%; /* Rich, trustworthy navy blue */
     --primary-foreground: 48 33% 98%;
-    --secondary: 158 24% 42%; /* Sage green */
+    --secondary: 158 30% 45%; /* More vibrant sage green */
     --secondary-foreground: 48 33% 98%;
     --muted: 48 33% 90%;
     --muted-foreground: 215 20% 55%;
-    --accent: 25 56% 60%; /* Muted terracotta/peach */
+    --accent: 25 70% 60%; /* Warmer, more vibrant terracotta/peach */
     --accent-foreground: 215 28% 17%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 215 25% 85%; /* Light, warm gray */
     --input: 215 25% 85%;
-    --ring: 214 39% 28%;
-    --chart-1: 214 39% 28%;
-    --chart-2: 158 24% 42%;
-    --chart-3: 25 56% 60%;
+    --ring: 215 45% 35%;
+    --chart-1: 215 45% 35%;
+    --chart-2: 158 30% 45%;
+    --chart-3: 25 70% 60%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
     --radius: 0.5rem;
@@ -48,7 +48,7 @@ body {
     --secondary-foreground: 48 33% 96%;
     --muted: 215 29% 20%;
     --muted-foreground: 215 20% 65%;
-    --accent: 25 66% 65%; /* Brighter terracotta/peach for dark mode */
+    --accent: 25 70% 65%; /* Brighter terracotta/peach for dark mode */
     --accent-foreground: 215 28% 12%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -56,8 +56,8 @@ body {
     --input: 215 28% 25%;
     --ring: 48 33% 96%;
     --chart-1: 48 33% 96%;
-    --chart-2: 25 66% 65%;
-    --chart-3: 158 24% 42%;
+    --chart-2: 25 70% 65%;
+    --chart-3: 158 30% 45%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
