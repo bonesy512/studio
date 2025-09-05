@@ -7,16 +7,16 @@ import { ArrowRight } from 'lucide-react';
 
 const services = [
   {
-    title: 'Design & Branding',
-    description: 'A powerful brand is more than a logo. We build enduring brands through comprehensive strategy, visual identity, and web design that tells your unique story.',
+    title: 'Brand Strategy & Identity',
+    description: 'We build enduring brands through comprehensive strategy, visual identity, and messaging that tells your unique story and resonates with your audience.',
   },
   {
-    title: 'Technology & Development',
-    description: "From ambitious ideas to functional reality. We build and modernize custom apps, SaaS platforms, and other digital solutions that are scalable and built with excellence.",
+    title: 'Digital Marketing Campaigns',
+    description: 'From concept to execution, we design and manage impactful digital marketing campaigns across all channels to drive growth and engagement.',
   },
   {
-    title: 'AI & Strategic Consulting',
-    description: 'Harnessing AI honestly and charting a clear course forward. We demystify artificial intelligence, providing practical tools and strategic roadmapping to empower your business.',
+    title: 'Advertising & Media Buying',
+    description: 'We handle media planning and buying to ensure your message reaches the right audience, at the right time, on the right platform for maximum ROI.',
   },
 ];
 
@@ -26,15 +26,15 @@ export default function Home() {
       <section className="text-center space-y-4">
         <h1 className="text-6xl md:text-7xl font-bold tracking-tighter">Schustereit & Co.</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          A high-end design, technology, and AI consultancy for ambitious brands. We build what's next.
+          A full-service marketing and advertising agency built on integrity, strategic foresight, and operational excellence. We are the strategic stewards of your brand's future.
         </p>
       </section>
 
       <section className="text-center space-y-6">
-        <h2 className="text-3xl font-bold tracking-tighter">Your Vision, Illuminated.</h2>
+        <h2 className="text-3xl font-bold tracking-tighter">Your Vision, Amplified.</h2>
         <div className="text-muted-foreground space-y-4 max-w-4xl mx-auto">
            <p>
-            At Schustereit & Co., we partner with inspiring Austin businesses to transform bold ideas into tangible digital realities. From foundational branding that tells your unique story to sophisticated AI integrations that future-proof your operations, our work is a testament to honest craftsmanship and strategic guidance. We're here to be a light for your mission, building the digital tools you need to shine in Austin and beyond.
+            At Schustereit & Co., we bring C-level, hands-on operational expertise to every client engagement. Our unique blend of strategic business development, IT infrastructure, and digital marketing savvy allows us to build campaigns that are not only creative and impactful, but also technically sound and deeply integrated with your business goals.
           </p>
           <p>
             Our pedigree includes founding successful ventures like{' '}
@@ -51,7 +51,7 @@ export default function Home() {
 
       <section className="space-y-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <h2 className="text-3xl font-bold tracking-tighter">Services & Areas of Focus</h2>
+          <h2 className="text-3xl font-bold tracking-tighter">Core Services</h2>
           <Button asChild variant="link" className="text-lg">
             <Link href="/services">View All Services <ArrowRight className="ml-2 h-5 w-5" /></Link>
           </Button>
@@ -74,7 +74,7 @@ export default function Home() {
 
       <section className="text-center">
         <Button asChild size="lg">
-          <Link href="/pricing">View Pricing & Requirements →</Link>
+          <Link href="/pricing">View Pricing & Book a Consultation →</Link>
         </Button>
       </section>
     </div>

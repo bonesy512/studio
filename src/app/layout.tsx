@@ -8,15 +8,15 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
-  title: 'Schustereit & Co | Austin, TX Web Design & AI Consultancy',
-  description: 'A high-end design, technology, and AI consultancy in Austin, Texas for ambitious brands. We build what\'s next.',
-  keywords: ['Web Design Austin', 'AI Consulting Austin', 'Technology Consultancy Texas', 'Schustereit & Co', 'Next.js Development', 'Brand Identity', 'Christian Business'],
+  title: 'Schustereit & Co | A Marketing & Advertising Agency',
+  description: 'Schustereit & Co. is a full-service marketing and advertising agency built on a foundation of integrity, strategic foresight, and hands-on operational excellence.',
+  keywords: ['Marketing Agency', 'Advertising Agency', 'Brand Strategy', 'Schustereit & Co', 'Digital Marketing', 'Business Development'],
   authors: [{ name: 'Schustereit & Co.', url: 'https://schustereit.co' }],
   creator: 'Schustereit & Co.',
   publisher: 'Schustereit & Co.',
   openGraph: {
-    title: 'Schustereit & Co | Austin, TX Web Design & AI Consultancy',
-    description: 'A high-end design, technology, and AI consultancy in Austin, Texas for ambitious brands. We build what\'s next.',
+    title: 'Schustereit & Co | A Marketing & Advertising Agency',
+    description: 'A full-service marketing and advertising agency built on a foundation of integrity, strategic foresight, and hands-on operational excellence.',
     url: 'https://schustereit.co',
     siteName: 'Schustereit & Co',
     images: [
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Schustereit & Co | Austin, TX Web Design & AI Consultancy',
-    description: 'A high-end design, technology, and AI consultancy in Austin, Texas for ambitious brands. We build what\'s next.',
+    title: 'Schustereit & Co | A Marketing & Advertising Agency',
+    description: 'A full-service marketing and advertising agency built on a foundation of integrity, strategic foresight, and hands-on operational excellence.',
     images: ['https://www.schustereit.co/twitter-og-image.jpg'], // Should be an absolute URL
     creator: '@SchustereitCo',
   },
@@ -61,14 +61,14 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased relative">
         <div className="glow-effect top-[-20%] right-[-20%] h-2/3 w-2/3 bg-primary"></div>
         <div className="glow-effect bottom-[-20%] left-[-20%] h-2/3 w-2/3 bg-accent"></div>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
         >
