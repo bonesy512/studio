@@ -9,7 +9,7 @@ const teamMembers = [
     name: 'Thomas Schustereit',
     role: 'Founder & Lead Technologist',
     bio: "Thomas is a visionary technologist with a passion for building dreams into functional digital realities. With a deep expertise in software architecture, AI integration, and full-stack development, he leads the studio's most ambitious technical projects, transforming complex challenges into elegant, scalable solutions.",
-    linkedin: 'https://www.linkedin.com/in/your-profile',
+    linkedin: 'https://www.linkedin.com/in/thomasmschustereit/',
     image: 'https://picsum.photos/400/400',
     imageHint: 'professional man',
   },
