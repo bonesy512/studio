@@ -12,7 +12,6 @@ const designAndBranding = {
     { name: 'Full Brand Identity System', price: '$3,500+' },
     { name: 'UI/UX for Web & Mobile', price: '$4,500+' },
   ],
-  isActionable: true,
 };
 
 const webAndApp = {
@@ -23,7 +22,6 @@ const webAndApp = {
     { name: 'E-commerce Store', price: '$12,000+' },
     { name: 'Custom App / SaaS MVP', price: '$25,000+' },
   ],
-  isActionable: false,
 };
 
 const aiAndConsulting = {
@@ -34,7 +32,6 @@ const aiAndConsulting = {
     { name: 'Custom AI Agent Development', price: '$15,000+' },
     { name: 'Paid Discovery & Roadmapping', price: '$3,000' },
   ],
-  isActionable: true,
 };
 
 const retainersAndHourly = {
@@ -45,7 +42,6 @@ const retainersAndHourly = {
         { name: 'Specialized Consulting (AI/IT)', price: '$250/hr' },
         { name: '15-min billing increments', price: 'Fair & transparent' },
     ],
-    isActionable: false,
 };
 
 const plans = [designAndBranding, webAndApp, aiAndConsulting, retainersAndHourly];
@@ -80,15 +76,9 @@ export default function PricingPage() {
               </ul>
             </CardContent>
             <CardFooter>
-              {plan.isActionable ? (
                 <Button asChild className="w-full">
-                  <Link href="/book">Book Discovery Session</Link>
-                </Button>
-              ) : (
-                <Button asChild className="w-full" variant="outline">
                    <Link href="/book">Book a Consultation</Link>
                 </Button>
-              )}
             </CardFooter>
           </Card>
         ))}
