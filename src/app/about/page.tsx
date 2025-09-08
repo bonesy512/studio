@@ -19,35 +19,22 @@ export default function AboutPage() {
           <CardDescription>Co-Founders</CardDescription>
         </CardHeader>
         <CardContent className="space-y-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-4 text-muted-foreground">
+          <div className="relative w-full h-96 rounded-lg overflow-hidden border-4 border-primary/20">
+            <Image
+              src="https://picsum.photos/800/500"
+              alt="Family photo of Thomas and Lindsey"
+              fill
+              className="object-cover"
+              data-ai-hint="family landscape"
+            />
+          </div>
+          <div className="space-y-4 text-muted-foreground text-center justify-center px-12">
               <p>
                 As partners in both life and work, we founded Schustereit & Co. on a shared passion for building dreams into digital realities. Thomas, our lead technologist, brings a deep expertise in software architecture and AI integration, transforming complex challenges into elegant, scalable solutions. Lindsey, our creative director, shapes the narrative, ensuring every project is not only beautiful but also deeply aligned with the client's vision and market goals.
               </p>
               <p>
                 Together, we bridge the gap between cutting-edge technology and timeless design. Our collaborative approach ensures that every project benefits from both strategic technical oversight and a compelling creative vision, resulting in digital experiences that are as functional and robust as they are engaging and memorable.
               </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-               <div className="relative w-full h-80 rounded-lg overflow-hidden border-4 border-primary/20">
-                 <Image
-                  src="https://picsum.photos/400/600"
-                  alt="Family photo of Thomas and Lindsey"
-                  fill
-                  className="object-cover"
-                  data-ai-hint="family portrait"
-                />
-               </div>
-               <div className="relative w-full h-80 rounded-lg overflow-hidden border-4 border-primary/20 mt-8">
-                 <Image
-                  src="https://picsum.photos/400/601"
-                  alt="Another family photo of Thomas and Lindsey"
-                  fill
-                  className="object-cover"
-                  data-ai-hint="couple smiling"
-                />
-               </div>
-            </div>
           </div>
         </CardContent>
       </Card>
