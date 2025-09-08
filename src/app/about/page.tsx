@@ -19,7 +19,7 @@ export default function AboutPage() {
           <CardDescription>Co-Founders</CardDescription>
         </CardHeader>
         <CardContent className="space-y-8">
-          <div className="relative w-full h-128 rounded-lg overflow-hidden border-4 border-primary/20">
+          <div className="relative w-full h-[512px] rounded-lg overflow-hidden border-4 border-primary/20">
             <Image
               src="/4E4A4365.jpeg"
               alt="Family photo of Thomas and Lindsey"
