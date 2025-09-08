@@ -19,7 +19,7 @@ export default function PortfolioPage() {
 
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
-          <Card key={project.title} className="flex flex-col group overflow-hidden">
+          <Card key={project.title} className="flex flex-col group overflow-hidden bg-card/50 backdrop-blur-lg border border-black/10 dark:border-white/10">
             <div className="relative overflow-hidden">
               <Image
                 src={project.imageUrl}

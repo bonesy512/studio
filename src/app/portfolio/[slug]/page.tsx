@@ -21,19 +21,19 @@ async function GeneratedContent({ title, description }: { title: string; descrip
   const content = await generateProjectContent({ title, description });
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+      <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
         <CardHeader><CardTitle>Project Goal</CardTitle></CardHeader>
         <CardContent>
           <p className="text-muted-foreground">{content.projectGoal}</p>
         </CardContent>
       </Card>
-      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+      <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
         <CardHeader><CardTitle>Our Solution</CardTitle></CardHeader>
         <CardContent>
           <p className="text-muted-foreground">{content.ourSolution}</p>
         </CardContent>
       </Card>
-       <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+       <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
         <CardHeader><CardTitle>Technologies</CardTitle></CardHeader>
         <CardContent>
           <p className="text-muted-foreground">{content.technologies}</p>
@@ -46,7 +46,7 @@ async function GeneratedContent({ title, description }: { title: string; descrip
 function LandhackerContent() {
   return (
     <div className="space-y-8">
-      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+      <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
         <CardHeader>
           <CardTitle>Project Overview</CardTitle>
           <CardDescription>Redefining Land Investment with AI and Geospatial Intelligence</CardDescription>
@@ -56,7 +56,7 @@ function LandhackerContent() {
         </CardContent>
       </Card>
 
-      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+      <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
         <CardHeader><CardTitle>Key Features</CardTitle></CardHeader>
         <CardContent className="space-y-4">
           <ul className="list-disc list-inside text-muted-foreground space-y-2">
@@ -71,7 +71,7 @@ function LandhackerContent() {
       </Card>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader><CardTitle>Technical Architecture & Stack</CardTitle></CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-1">
@@ -92,7 +92,7 @@ function LandhackerContent() {
             </div>
           </CardContent>
         </Card>
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader><CardTitle>Strategic Impact & Business Model</CardTitle></CardHeader>
           <CardContent>
             <p className="text-muted-foreground">Landhacker.AI employs a powerful hybrid monetization model that includes a Freemium tier, Pay-Per-Use (tokens) for high-value actions, and a Subscription (SaaS) model for power users. The platform also features a built-in iBuyer funnel to generate proprietary deal flow and an affiliate program to drive user acquisition. A complete overhaul of the brand's social media identity was a critical strategic initiative to align with a professional B2B SaaS persona and correct previous "algorithmic poisoning."</p>
@@ -100,7 +100,7 @@ function LandhackerContent() {
         </Card>
       </div>
 
-      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+      <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader>
               <CardTitle>Comprehensive Marketing Strategy Rollout</CardTitle>
               <CardDescription>Rebranding for Professional Growth</CardDescription>
@@ -111,7 +111,7 @@ function LandhackerContent() {
       </Card>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader>
             <CardTitle>New Brand Identity</CardTitle>
             <CardDescription>Building Trust and Authority</CardDescription>
@@ -134,7 +134,7 @@ function LandhackerContent() {
             </div>
           </CardContent>
         </Card>
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader>
             <CardTitle>Content Authority Engine</CardTitle>
             <CardDescription>A Multi-Pillar Strategy</CardDescription>
@@ -152,7 +152,7 @@ function LandhackerContent() {
       </div>
 
        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader>
             <CardTitle>Paid Media Accelerator</CardTitle>
             <CardDescription>A Full-Funnel Advertising Strategy</CardDescription>
@@ -165,7 +165,7 @@ function LandhackerContent() {
             </ul>
           </CardContent>
         </Card>
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader>
             <CardTitle>Community and Engagement</CardTitle>
             <CardDescription>Building a Professional Network</CardDescription>
@@ -176,7 +176,7 @@ function LandhackerContent() {
         </Card>
       </div>
 
-      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+      <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
         <CardHeader>
           <CardTitle>Implementation Roadmap & KPIs</CardTitle>
           <CardDescription>A 90-Day Transformation Plan</CardDescription>
@@ -198,7 +198,7 @@ function LandhackerContent() {
       </Card>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader><CardTitle>Development Status & Achievements</CardTitle></CardHeader>
           <CardContent className="space-y-4">
             <ul className="list-disc list-inside text-muted-foreground space-y-2">
@@ -208,7 +208,7 @@ function LandhackerContent() {
             </ul>
           </CardContent>
         </Card>
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader><CardTitle>Future Directions</CardTitle></CardHeader>
           <CardContent>
             <p className="text-muted-foreground">Immediate priorities include completing the remaining data migration, resolving regression bugs, and finalizing email and affiliate marketing integrations. Longer-term plans focus on expanding measurement tools, activating content marketing, and pursuing full Progressive Web App (PWA) functionality to solidify Landhacker.AI's position as a market leader.</p>
@@ -223,7 +223,7 @@ function LandhackerContent() {
 function MvsContent() {
     return (
     <div className="space-y-8">
-      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+      <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
         <CardHeader>
           <CardTitle>Project Overview</CardTitle>
           <CardDescription>Empowering Independent SFF Authors with Radical Transparency</CardDescription>
@@ -234,7 +234,7 @@ function MvsContent() {
       </Card>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader><CardTitle>Core Philosophy & Business Model</CardTitle></CardHeader>
           <CardContent className="space-y-4">
             <p className="text-muted-foreground">MVS operates on a model of **radical transparency**. Authors are the publishers, retaining 100% of their rights and royalties, with full creative control. Revenue comes directly from professional services provided, not from a percentage of book sales, a model clearly articulated to differentiate MVS from predatory vanity presses.</p>
@@ -246,7 +246,7 @@ function MvsContent() {
             </ul>
           </CardContent>
         </Card>
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader><CardTitle>Services Offered</CardTitle></CardHeader>
           <CardContent className="space-y-4">
             <p className="text-muted-foreground">MVS provides a suite of a la carte professional services to guide authors through every stage of the publishing process.</p>
@@ -259,7 +259,7 @@ function MvsContent() {
         </Card>
       </div>
 
-      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+      <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
         <CardHeader><CardTitle>Strategic Marketing & Community Building</CardTitle></CardHeader>
         <CardContent>
           <p className="text-muted-foreground">Marketing is driven by a content-led strategy that provides immense value upfront. By organizing content into four key pillars (The Publishing Quest, Craft & World-Building, The Business of Writing, The Society Ledger), MVS attracts and educates its target audience. Community is built through targeted lead magnets, an exclusive email newsletter, and deep engagement on platforms like Instagram, Facebook (including a private "Outer Circle" group), YouTube, and Reddit.</p>
@@ -267,7 +267,7 @@ function MvsContent() {
       </Card>
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader><CardTitle>Operational Foundations</CardTitle></CardHeader>
           <CardContent className="space-y-4">
             <ul className="list-disc list-inside text-muted-foreground space-y-2">
@@ -278,7 +278,7 @@ function MvsContent() {
             </ul>
           </CardContent>
         </Card>
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader><CardTitle>Launch Success: *Rise of the Veilbreaker*</CardTitle></CardHeader>
           <CardContent>
             <p className="text-muted-foreground">The marketing and brand strategy culminated in the successful debut launch of the company's first author project, *Rise of the Veilbreaker*, on September 1st, 2025. The book is now available on major platforms like Amazon and Barnes & Noble, validating the MVS model and establishing its credibility within the SFF community.</p>
@@ -331,7 +331,7 @@ function VeilbreakersContent() {
 
   return (
     <div className="space-y-8">
-      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+      <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
         <CardHeader>
           <CardTitle>Campaign Overview</CardTitle>
           <CardDescription>A heroic fantasy adventure for D&D 5e, taking characters from level 1 to 20 in the frozen world of Binsmuth.</CardDescription>
@@ -342,7 +342,7 @@ function VeilbreakersContent() {
       </Card>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader><CardTitle>Core Conflict & Themes</CardTitle></CardHeader>
           <CardContent className="space-y-4">
             <p className="text-muted-foreground">The central conflict is the escalating war between Zel'Drea and Klydos, the Lord of Tempests. Aided by the fanatical Grey Wizards of Sambor, Klydos unleashes twisted Chaos Thralls and a supernatural cold. Internally, the kingdom is fractured by the betrayal of Duke Kendrick Grimhorn, who seeks to usurp the throne.</p>
@@ -355,7 +355,7 @@ function VeilbreakersContent() {
             </ul>
           </CardContent>
         </Card>
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
           <CardHeader><CardTitle>Key Factions & Deities</CardTitle></CardHeader>
           <CardContent className="space-y-4">
              <div className="space-y-1">
@@ -375,7 +375,7 @@ function VeilbreakersContent() {
         </Card>
       </div>
 
-      <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+      <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
         <CardHeader>
             <CardTitle>Campaign Structure: A Four-Arc Saga</CardTitle>
             <CardDescription>The narrative unfolds across four distinct arcs with milestone-based progression.</CardDescription>
@@ -406,7 +406,7 @@ function ContentSkeleton() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {[...Array(3)].map((_, i) => (
-        <Card key={i} className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
+        <Card key={i} className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-secondary/20 dark:border-white/10">
           <CardHeader>
             <div className="h-6 w-3/4 bg-muted rounded-md animate-pulse"></div>
           </CardHeader>
@@ -476,7 +476,7 @@ export default function PortfolioProjectPage({ params }: { params: { slug: strin
           {!isMvs && !isVeilbreakers && !isLandhacker && <GeneratedContent title={project.title} description={project.description} />}
         </Suspense>
         
-        <Card className="shadow-lg bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
+        <Card className="bg-card/50 border border-black/10 backdrop-blur-lg dark:bg-card/75 dark:border-white/10">
             <CardHeader><CardTitle>Project Showcase</CardTitle></CardHeader>
             <CardContent>
               <p className="text-muted-foreground">More images and details about the project will be displayed here soon.</p>
