@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div className="space-y-24">
       <section className="text-center space-y-4">
-        <h1 className="text-6xl md:text-7xl font-bold tracking-tighter">Schustereit & Andrews</h1>
+        <h1 className="text-6xl md:text-7xl font-bold tracking-tighter">Schustereit & Co.</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           Your vision, our partnership. Marketing for your life's work.
         </p>

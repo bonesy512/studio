@@ -19,7 +19,7 @@ export default function Footer() {
         <Separator />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
           <div className="space-y-2">
-            <h3 className="font-bold text-lg">Schustereit & Andrews</h3>
+            <h3 className="font-bold text-lg">Schustereit & Co.</h3>
             <p className="text-muted-foreground">
               Your partners in growth, from Austin with love.
               <br />
@@ -55,7 +55,7 @@ export default function Footer() {
         <div className="py-6 text-center text-muted-foreground text-sm">
           <p className="h-5">
             {currentYear ? (
-              <span>&copy; {currentYear} Schustereit & Andrews. All Rights Reserved. | Austin, Texas</span>
+              <span>&copy; {currentYear} Schustereit & Co. All Rights Reserved. | Austin, Texas</span>
             ) : (
               // This space is reserved, but empty on the server, preventing layout shift
               // and guaranteeing the same <p> tag is rendered on both server and client.
