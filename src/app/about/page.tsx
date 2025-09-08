@@ -21,7 +21,7 @@ export default function AboutPage() {
         <CardContent className="space-y-8">
           <div className="relative w-full h-96 rounded-lg overflow-hidden border-4 border-primary/20">
             <Image
-              src="src/public/4E4A4365.jpeg"
+              src="/4E4A4365.jpeg"
               alt="Family photo of Thomas and Lindsey"
               fill
               className="object-cover"
@@ -50,7 +50,7 @@ export default function AboutPage() {
           <CardContent className="flex flex-col md:flex-row items-center gap-8">
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/50 shrink-0">
                   <Image
-                      src="src/public/IMG_6820.jpeg"
+                      src="/IMG_6820.jpeg"
                       alt="A picture of Noodle, the Great Pyrenees puppy"
                       width={256}
                       height={256}
