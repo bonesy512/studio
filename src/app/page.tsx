@@ -8,15 +8,15 @@ import { ArrowRight } from 'lucide-react';
 const services = [
   {
     title: 'Brand Strategy & Identity',
-    description: 'We build enduring brands through comprehensive strategy, visual identity, and messaging that tells your unique story and resonates with your audience.',
+    description: 'Together, we’ll build an enduring brand that truly feels like you. We dive deep into your story and your goals to create a clear strategy, a beautiful visual identity, and messaging that connects with the people you want to reach.',
   },
   {
     title: 'Digital Marketing Campaigns',
-    description: 'From concept to execution, we design and manage impactful digital marketing campaigns across all channels to drive growth and engagement.',
+    description: "We love bringing a great story to life online. We'll work with you from the first idea to the final click, designing and managing digital marketing campaigns that don't just get attention—they build community and drive real growth.",
   },
   {
     title: 'Advertising & Media Buying',
-    description: 'We handle media planning and buying to ensure your message reaches the right audience, at the right time, on the right platform for maximum ROI.',
+    description: "We'll help you get your message in front of the right people, at the right time. We handle all the planning and media buying to make sure your investment works hard for you, connecting you with the audience that needs to hear what you have to say.",
   },
 ];
 
@@ -24,27 +24,31 @@ export default function Home() {
   return (
     <div className="space-y-24">
       <section className="text-center space-y-4">
-        <h1 className="text-6xl md:text-7xl font-bold tracking-tighter">Schustereit & Co.</h1>
+        <h1 className="text-6xl md:text-7xl font-bold tracking-tighter">Schustereit & Andrews</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          A full-service marketing and advertising agency built on integrity, strategic foresight, and operational excellence. We are the strategic stewards of your brand's future.
+          Your vision, our partnership. Marketing for your life's work.
         </p>
       </section>
 
       <section className="text-center space-y-6">
-        <h2 className="text-3xl font-bold tracking-tighter">Your Vision, Amplified.</h2>
+        <h2 className="text-3xl font-bold tracking-tighter">It Started with a Partnership.</h2>
         <div className="text-muted-foreground space-y-4 max-w-4xl mx-auto">
            <p>
-            At Schustereit & Co., we bring C-level, hands-on operational expertise to every client engagement. Our unique blend of strategic business development, IT infrastructure, and digital marketing savvy allows us to build campaigns that are not only creative and impactful, but also technically sound and deeply integrated with your business goals.
+            Our story began in the whirlwind of life, where we realized we could conquer just about anything with our heads together. That belief is the foundation of our business. We know you’ve poured everything into your work, and we’re here to be the dedicated partners who help you share it with the world. We combine our strengths—from big-picture brand strategy to the nitty-gritty of digital marketing—to build a plan that feels like *you* and truly connects with your customers.
           </p>
           <p>
-            Our pedigree includes founding successful ventures like{' '}
+            Before we teamed up, we each built our own successful ventures (you might have heard of{' '}
             <a href="https://landhacker.ai" target="_blank" rel="noopener noreferrer" className="text-primary underline">
               landhacker.ai
             </a>{' '}
             and{' '}
             <a href="https://lazily.ai" target="_blank" rel="noopener noreferrer" className="text-primary underline">
               lazily.ai
-            </a>. Learn more <Link href="/about" className="text-primary underline">about us</Link>.
+            </a>
+            !). We learned so much along the way, and now we bring all of that experience to the table for you.{' '}
+            <Button asChild variant="link" className="text-base p-0 h-auto">
+                <Link href="/about">Read Our Full Story</Link>
+            </Button>
           </p>
         </div>
       </section>
@@ -70,13 +74,18 @@ export default function Home() {
         </div>
       </section>
       
-      <AISuggestion />
-
-      <section className="text-center">
-        <Button asChild size="lg">
-          <Link href="/pricing">View Pricing & Book a Consultation →</Link>
-        </Button>
+      <section className="space-y-6">
+        <h2 className="text-3xl font-bold tracking-tighter text-center">Ready to start the conversation?</h2>
+        <p className="text-muted-foreground text-center max-w-2xl mx-auto">
+          Every great partnership starts with a simple chat. We'd love to hear about your business, your vision, and where you'd like to go. Let's see if we're the right fit to help you get there.
+        </p>
+         <div className="text-center">
+            <Button asChild size="lg">
+              <Link href="/book">Let's Chat</Link>
+            </Button>
+         </div>
       </section>
+
     </div>
   );
 }
