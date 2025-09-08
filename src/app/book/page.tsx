@@ -7,7 +7,7 @@ export default function BookPage() {
   return (
     <div className="space-y-12">
        <Script
-        src="httpss://assets.calendly.com/assets/external/widget.js"
+        src="https://assets.calendly.com/assets/external/widget.js"
         strategy="afterInteractive"
       />
       <section className="text-center space-y-4">
