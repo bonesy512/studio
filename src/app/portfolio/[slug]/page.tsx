@@ -399,7 +399,7 @@ function VeilbreakersContent() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
 
 function ContentSkeleton() {
@@ -444,7 +444,7 @@ export default function PortfolioProjectPage({ params }: { params: { slug: strin
             </Link>
           </Button>
         </div>
-        <Card className="relative w-full h-96 rounded-lg overflow-hidden border shadow-lg">
+        <Card className="relative w-full h-96 rounded-lg overflow-hidden border">
            <Image
             src={project.imageUrl}
             alt={`Hero image for ${project.title}`}
