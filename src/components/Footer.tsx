@@ -7,10 +7,12 @@ import { useState, useEffect } from 'react';
 export default function Footer() {
   const [currentYear, setCurrentYear] = useState<number | null>(null);
   const [email, setEmail] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());
     setEmail('studio@schustereitandco.com');
+    setIsClient(true);
   }, []);
 
   return (
@@ -20,11 +22,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
           <div className="space-y-2">
             <h3 className="font-bold text-lg">Schustereit & Co.</h3>
-            <p className="text-muted-foreground">
-              Your partners in growth, from Austin with love.
-              <br />
-              Thomas & Lindsey
-            </p>
+            {isClient && (
+               <p className="text-muted-foreground">
+                Your partners in growth, from Austin with love.
+                <br />
+                Thomas & Lindsey
+              </p>
+            )}
           </div>
           <div className="grid grid-cols-2 gap-8">
             <div>
@@ -42,7 +46,7 @@ export default function Footer() {
               <h4 className="font-semibold mb-2">Contact</h4>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="h-5">
-                  {email ? (
+                  {email && isClient ? (
                     <a href={`mailto:${email}`} className="hover:text-foreground">{email}</a>
                   ) : (
                     <>&nbsp;</>
@@ -54,7 +58,7 @@ export default function Footer() {
         </div>
         <div className="py-6 text-center text-muted-foreground text-sm">
           <p className="h-5">
-            {currentYear ? (
+            {currentYear && isClient ? (
               <span>&copy; {currentYear} Schustereit & Co. All Rights Reserved. | Austin, Texas</span>
             ) : (
               // This space is reserved, but empty on the server, preventing layout shift
