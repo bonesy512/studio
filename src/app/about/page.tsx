@@ -1,27 +1,7 @@
 // src/app/about/page.tsx
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Linkedin } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { PawPrint } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
-
-const teamMembers = [
-  {
-    name: 'Thomas Schustereit',
-    role: 'Founder & Lead Technologist',
-    bio: "Thomas is a visionary technologist with a passion for building dreams into functional digital realities. With a deep expertise in software architecture, AI integration, and full-stack development, he leads the studio's most ambitious technical projects, transforming complex challenges into elegant, scalable solutions.",
-    linkedin: 'https://www.linkedin.com/in/thomasmschustereit/',
-    image: 'https://picsum.photos/400/400',
-    imageHint: 'professional man',
-  },
-  {
-    name: 'Lindsey Schustereit',
-    role: 'Co-Founder & Creative Director',
-    bio: "Lindsey is the creative force behind Schustereit & Co. Her background in brand strategy and visual design ensures that every project is not only beautiful but also deeply aligned with the client's vision and market goals. She believes that great design tells a story and builds lasting connections.",
-    linkedin: 'https://www.linkedin.com/in/your-profile',
-    image: 'https://picsum.photos/400/401',
-    imageHint: 'woman with children',
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -33,32 +13,72 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {teamMembers.map((member) => (
-          <Card key={member.name} className="flex flex-col items-center text-center">
-            <CardHeader className="items-center">
-              <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-primary/50 mb-4">
-                <Image
-                  src={member.image}
-                  alt={`Portrait of ${member.name}`}
-                  width={192}
-                  height={192}
-                  data-ai-hint={member.imageHint}
-                  className="object-cover w-full h-full"
+      <Card className="overflow-hidden">
+        <CardHeader className="text-center">
+          <CardTitle className="text-4xl">Thomas & Lindsey Schustereit</CardTitle>
+          <CardDescription>Co-Founders</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4 text-muted-foreground">
+              <p>
+                As partners in both life and work, we founded Schustereit & Co. on a shared passion for building dreams into digital realities. Thomas, our lead technologist, brings a deep expertise in software architecture and AI integration, transforming complex challenges into elegant, scalable solutions. Lindsey, our creative director, shapes the narrative, ensuring every project is not only beautiful but also deeply aligned with the client's vision and market goals.
+              </p>
+              <p>
+                Together, we bridge the gap between cutting-edge technology and timeless design. Our collaborative approach ensures that every project benefits from both strategic technical oversight and a compelling creative vision, resulting in digital experiences that are as functional and robust as they are engaging and memorable.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+               <div className="relative w-full h-80 rounded-lg overflow-hidden border-4 border-primary/20">
+                 <Image
+                  src="https://picsum.photos/400/600"
+                  alt="Family photo of Thomas and Lindsey"
+                  fill
+                  className="object-cover"
+                  data-ai-hint="family portrait"
                 />
+               </div>
+               <div className="relative w-full h-80 rounded-lg overflow-hidden border-4 border-primary/20 mt-8">
+                 <Image
+                  src="https://picsum.photos/400/601"
+                  alt="Another family photo of Thomas and Lindsey"
+                  fill
+                  className="object-cover"
+                  data-ai-hint="couple smiling"
+                />
+               </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+      
+      <Card className="relative overflow-hidden group">
+          <div className="absolute top-4 right-4 bg-accent text-accent-foreground rounded-full p-3 z-10 transition-transform group-hover:scale-110">
+              <PawPrint className="w-6 h-6" />
+          </div>
+          <CardHeader>
+              <CardTitle>Meet Noodle</CardTitle>
+              <CardDescription>Official Mascot & Chief Morale Officer</CardDescription>
+          </CardHeader>
+          <CardContent className="flex flex-col md:flex-row items-center gap-8">
+              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/50 shrink-0">
+                  <Image
+                      src="https://picsum.photos/402/402"
+                      alt="A picture of Noodle, the Great Pyrenees puppy"
+                      width={256}
+                      height={256}
+                      data-ai-hint="great pyrenees puppy"
+                      className="object-cover w-full h-full transition-transform group-hover:scale-110"
+                  />
               </div>
-              <CardTitle>{member.name}</CardTitle>
-              <p className="text-primary">{member.role}</p>
-            </CardHeader>
-            <CardContent className="flex-grow space-y-4">
-              <p className="text-muted-foreground">{member.bio}</p>
-              <Link href={member.linkedin} target="_blank" rel="noopener noreferrer" className="inline-block">
-                <Linkedin className="w-6 h-6 hover:text-primary transition-colors" />
-              </Link>
-            </CardContent>
-          </Card>
-        ))}
-      </section>
+              <div className="text-center md:text-left space-y-2">
+                  <p className="text-lg text-muted-foreground">
+                      Noodle, our fluffy Great Pyrenees, is the heart of Schustereit & Co. While her official duties include ensuring team morale stays high and providing timely nap reminders, her true talent lies in her ability to untangle even the toughest creative knots with a well-timed head tilt. She's our constant reminder that sometimes the best solutions are found when you step away from the keyboard and enjoy a good belly rub.
+                  </p>
+              </div>
+          </CardContent>
+      </Card>
+
     </div>
   );
 }
