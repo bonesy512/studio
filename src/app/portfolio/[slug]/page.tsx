@@ -379,7 +379,7 @@ function VeilbreakersContent() {
         <CardHeader>
             <CardTitle>Campaign Structure: A Four-Arc Saga</CardTitle>
             <CardDescription>The narrative unfolds across four distinct arcs with milestone-based progression.</CardDescription>
-        </sCardHeader>
+        </CardHeader>
         <CardContent>
           <Accordion type="single" collapsible className="w-full">
             {campaignArcs.map((arc, index) => (
