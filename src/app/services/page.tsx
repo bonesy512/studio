@@ -6,6 +6,22 @@ import Link from 'next/link';
 
 const serviceCategories = [
   {
+    category: 'AI & Strategic Consulting',
+    icon: BrainCircuit,
+    services: [
+      {
+        title: 'AI Integration & Custom Agent Development',
+        headline: 'Putting artificial intelligence to work for you.',
+        content: "AI can open up incredible opportunities, but it’s hard to know where to begin. We act as your personal guide, helping you find the best ways to use AI in your business. We’ll develop a custom strategy and build tailored AI solutions—from simple automations to complex agents—that save you time and give you a competitive edge."
+      },
+      {
+        title: 'Paid Discovery & Roadmapping',
+        headline: 'The perfect plan starts here.',
+        content: "The best projects begin with a clear and thoughtful plan. Our Discovery & Roadmapping service is the essential first step for any big project. We’ll dive deep with you to understand your goals, technical needs, and the challenges ahead, delivering a detailed roadmap that ensures your project is set up for success from day one."
+      }
+    ]
+  },
+  {
     category: 'Design & Branding',
     icon: Palette,
     services: [
@@ -37,22 +53,6 @@ const serviceCategories = [
       }
     ]
   },
-  {
-    category: 'AI & Strategic Consulting',
-    icon: BrainCircuit,
-    services: [
-      {
-        title: 'AI Integration & Custom Agent Development',
-        headline: 'Putting artificial intelligence to work for you.',
-        content: "AI can open up incredible opportunities, but it’s hard to know where to begin. We act as your personal guide, helping you find the best ways to use AI in your business. We’ll develop a custom strategy and build tailored AI solutions—from simple automations to complex agents—that save you time and give you a competitive edge."
-      },
-      {
-        title: 'Paid Discovery & Roadmapping',
-        headline: 'The perfect plan starts here.',
-        content: "The best projects begin with a clear and thoughtful plan. Our Discovery & Roadmapping service is the essential first step for any big project. We’ll dive deep with you to understand your goals, technical needs, and the challenges ahead, delivering a detailed roadmap that ensures your project is set up for success from day one."
-      }
-    ]
-  }
 ];
 
 export default function ServicesPage() {

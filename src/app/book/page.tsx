@@ -13,12 +13,12 @@ export default function BookPage() {
       <section className="text-center space-y-4">
         <h1 className="text-5xl font-bold tracking-tighter">Book a Discovery Session</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Schedule a 60-minute session to discuss your project.
+          Schedule a 30-minute session to discuss your project.
         </p>
       </section>
       <div
         className="calendly-inline-widget w-full"
-        data-url="https://calendly.com/schustereit/60min"
+        data-url="https://calendly.com/kozmo51488/30min"
         style={{ minWidth: '320px', height: '700px' }}
       ></div>
     </div>
