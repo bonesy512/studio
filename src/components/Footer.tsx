@@ -6,9 +6,11 @@ import { useState, useEffect } from 'react';
 
 export default function Footer() {
   const [currentYear, setCurrentYear] = useState<number | null>(null);
+  const [email, setEmail] = useState<string | null>(null);
 
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());
+    setEmail('studio@schustereitandco.com');
   }, []);
 
   return (
@@ -37,7 +39,13 @@ export default function Footer() {
             <div>
               <h4 className="font-semibold mb-2">Contact</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="mailto:studio@schustereitandco.com" className="hover:text-foreground">studio@schustereitandco.com</a></li>
+                <li className="h-5">
+                  {email ? (
+                    <a href={`mailto:${email}`} className="hover:text-foreground">{email}</a>
+                  ) : (
+                    <>&nbsp;</>
+                  )}
+                </li>
               </ul>
             </div>
           </div>
