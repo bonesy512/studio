@@ -32,19 +32,19 @@
   }
 
   .dark {
-    --background: 220 20% 12%; /* Deep Charcoal */
+    --background: 224 71% 4%;
     --foreground: 35 100% 98%;
     --card: 217 33% 17%;
     --card-foreground: 35 100% 98%;
     --popover: 224 71% 4%;
     --popover-foreground: 35 100% 98%;
-    --primary: 35 100% 98%; /* Primary becomes light for high contrast on dark bg */
-    --primary-foreground: 215 39% 23%; /* Text on primary buttons is dark */
-    --secondary: 24 95% 53%; /* Copper becomes secondary */
+    --primary: 35 100% 98%; 
+    --primary-foreground: 215 39% 23%; 
+    --secondary: 24 95% 53%; 
     --secondary-foreground: 0 0% 98%;
     --muted: 217 33% 17%;
     --muted-foreground: 220 9% 46%;
-    --accent: 158 24% 32%; /* Sage green is accent */
+    --accent: 158 24% 32%; 
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -66,21 +66,5 @@
   }
   body {
     @apply bg-background text-foreground;
-    overflow-x: hidden;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'EB Garamond', serif;
-  }
-
-  .glow-effect {
-      position: absolute;
-      z-index: -1;
-      border-radius: 9999px;
-      filter: blur(150px);
-      opacity: 0.1;
-  }
-
-  .dark .glow-effect {
-    opacity: 0.2;
   }
 }
