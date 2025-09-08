@@ -37,7 +37,7 @@ export default function Footer() {
             <div>
               <h4 className="font-semibold mb-2">Contact</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="mailto:studio@schustereit.co" className="hover:text-foreground">studio@schustereit.co</a></li>
+                <li><a href="mailto:studio@schustereitandco.com" className="hover:text-foreground">studio@schustereitandco.com</a></li>
               </ul>
             </div>
           </div>

@@ -11,17 +11,17 @@ export const metadata: Metadata = {
   title: 'Schustereit & Co | A Marketing & Advertising Agency',
   description: 'Schustereit & Co. is a full-service marketing and advertising agency built on a foundation of integrity, strategic foresight, and hands-on operational excellence.',
   keywords: ['Marketing Agency', 'Advertising Agency', 'Brand Strategy', 'Schustereit & Co', 'Digital Marketing', 'Business Development'],
-  authors: [{ name: 'Schustereit & Co.', url: 'https://schustereit.co' }],
+  authors: [{ name: 'Schustereit & Co.', url: 'https://www.schustereitandco.com' }],
   creator: 'Schustereit & Co.',
   publisher: 'Schustereit & Co.',
   openGraph: {
     title: 'Schustereit & Co | A Marketing & Advertising Agency',
     description: 'A full-service marketing and advertising agency built on a foundation of integrity, strategic foresight, and hands-on operational excellence.',
-    url: 'https://schustereit.co',
+    url: 'https://www.schustereitandco.com',
     siteName: 'Schustereit & Co',
     images: [
       {
-        url: 'https://www.schustereit.co/og-image.jpg', // Should be an absolute URL
+        url: 'https://www.schustereitandco.com/og-image.jpg', // Should be an absolute URL
         width: 1200,
         height: 630,
         alt: 'Schustereit & Co. Logo and Tagline',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Schustereit & Co | A Marketing & Advertising Agency',
     description: 'A full-service marketing and advertising agency built on a foundation of integrity, strategic foresight, and hands-on operational excellence.',
-    images: ['https://www.schustereit.co/twitter-og-image.jpg'], // Should be an absolute URL
+    images: ['https://www.schustereitandco.com/twitter-og-image.jpg'], // Should be an absolute URL
     creator: '@SchustereitCo',
   },
   robots: {
