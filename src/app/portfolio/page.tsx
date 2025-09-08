@@ -47,7 +47,7 @@ export default function PortfolioPage() {
               {/* Future content can go here */}
             </CardContent>
             <CardFooter>
-              <Button asChild variant="secondary" className="w-full">
+              <Button asChild className="w-full">
                 <Link href={`/portfolio/${project.slug}`}>Learn More</Link>
               </Button>
             </CardFooter>
