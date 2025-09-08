@@ -11,13 +11,13 @@ const serviceCategories = [
     services: [
       {
         title: 'Full Brand Identity',
-        headline: 'We Build Brands That Endure.',
-        content: "A powerful brand is more than a logo; it's the soul of your business and your most valuable asset. We guide you through a comprehensive discovery process to unearth your mission, values, and voice. Our Full Brand Identity service delivers a complete strategic and visual foundation—including brand strategy, logo systems, a cohesive visual identity, and detailed guidelines to ensure your brand is not just seen, but remembered and trusted."
+        headline: 'A brand that’s authentically you.',
+        content: "A powerful brand is more than a logo—it’s the heart of your business. We work closely with you to understand your mission, values, and voice. From there, we build a complete brand foundation, including a clear strategy, a beautiful visual identity, and detailed guidelines to make sure your story is told consistently and memorably."
       },
       {
         title: 'Marketing & E-commerce Websites',
-        headline: 'Your Digital Foundation, Fortified.',
-        content: "Your website is the center of your digital ecosystem. It must be more than a brochure; it must be a high-performance engine for growth. We design and develop stunning marketing and e-commerce websites that are not only aesthetically impressive but are also built on a technically sound, scalable foundation. We create seamless, user-centric experiences that serve as a powerful tool for your business, driving both engagement and revenue."
+        headline: 'Your digital home, beautifully built.',
+        content: "Your website is the centerpiece of your online world. We design and build stunning, high-performance websites that are not just beautiful, but also intuitive and reliable. We focus on creating a seamless experience for your visitors that drives engagement and growth for your business."
       }
     ]
   },
@@ -27,13 +27,13 @@ const serviceCategories = [
     services: [
       {
         title: 'Custom App / SaaS Platform (MVP)',
-        headline: 'From Ambitious Idea to Functional Reality.',
-        content: "You've identified a unique problem that requires a sophisticated digital solution. We specialize in turning complex concepts into functional, scalable Custom Applications and Software-as-a-Service (SaaS) platforms. Starting with a Minimum Viable Product (MVP), we help you get to market efficiently, gather critical user feedback, and lay a rock-solid architectural foundation for future growth and investment."
+        headline: 'From ambitious idea to working reality.',
+        content: "Have a big idea for a custom app or platform? We specialize in turning complex concepts into functional, market-ready products. We start by building a Minimum Viable Product (MVP) to help you launch efficiently, get real user feedback, and create a solid foundation for future growth."
       },
       {
         title: 'Technology Modernization',
-        headline: 'Future-Proofing Your Technical Foundation.',
-        content: "Legacy systems and outdated technology hinder growth and create operational friction. Our Technology Modernization service is designed for established businesses ready to upgrade their infrastructure for the future. We conduct a thorough assessment of your current tech stack, devise a strategic migration plan, and provide expert execution to ensure a seamless transition to a more agile, secure, and scalable technological foundation."
+        headline: 'Future-proofing your business.',
+        content: "Outdated technology can hold your business back. We help you move forward by assessing your current systems and creating a clear plan to upgrade your tech. We’ll guide you through every step of the transition to a more secure, scalable, and efficient foundation for your business."
       }
     ]
   },
@@ -43,13 +43,13 @@ const serviceCategories = [
     services: [
       {
         title: 'AI Integration & Custom Agent Development',
-        headline: 'Harnessing Artificial Intelligence, Strategically.',
-        content: "AI offers unprecedented opportunities for efficiency and innovation, but knowing where to start can be overwhelming. We serve as your C-level guide into the world of AI. We help you identify the most impactful opportunities within your operations, develop a custom AI strategy, and build and implement solutions—from workflow automation to bespoke AI agents—that deliver measurable business value and a distinct competitive advantage."
+        headline: 'Putting artificial intelligence to work for you.',
+        content: "AI can open up incredible opportunities, but it’s hard to know where to begin. We act as your personal guide, helping you find the best ways to use AI in your business. We’ll develop a custom strategy and build tailored AI solutions—from simple automations to complex agents—that save you time and give you a competitive edge."
       },
       {
         title: 'Paid Discovery & Roadmapping',
-        headline: 'Charting a Clear Course Forward.',
-        content: "The most successful ventures begin with a clear, strategic plan. Our Paid Discovery & Roadmapping service is the essential first step for any complex digital initiative. We dive deep into your business goals, technical requirements, and market landscape. Through this intensive, collaborative process, we deliver a comprehensive strategic roadmap—a blueprint for success that ensures your investment is built on a foundation of clarity and foresight."
+        headline: 'The perfect plan starts here.',
+        content: "The best projects begin with a clear and thoughtful plan. Our Discovery & Roadmapping service is the essential first step for any big project. We’ll dive deep with you to understand your goals, technical needs, and the challenges ahead, delivering a detailed roadmap that ensures your project is set up for success from day one."
       }
     ]
   }
@@ -61,7 +61,7 @@ export default function ServicesPage() {
       <section className="text-center space-y-4">
         <h1 className="text-5xl font-bold tracking-tighter">Our Services</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          We provide a suite of services built on a foundation of C-level strategic insight and hands-on technical and operational excellence.
+          We offer a range of services designed to bring your vision to life, combining strategic thinking with hands-on expertise.
         </p>
       </section>
 
