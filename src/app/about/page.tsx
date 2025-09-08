@@ -19,7 +19,7 @@ export default function AboutPage() {
           <CardDescription>Co-Founders</CardDescription>
         </CardHeader>
         <CardContent className="space-y-8">
-          <div className="relative w-full h-96 rounded-lg overflow-hidden border-4 border-primary/20">
+          <div className="relative w-full h-128 rounded-lg overflow-hidden border-4 border-primary/20">
             <Image
               src="/4E4A4365.jpeg"
               alt="Family photo of Thomas and Lindsey"
@@ -55,7 +55,7 @@ export default function AboutPage() {
                       width={256}
                       height={256}
                       data-ai-hint="great pyrenees puppy"
-                      className="object-cover w-full h-full transition-transform group-hover:scale-110"
+                      className="object-cover object-bottom w-full h-full transition-transform group-hover:scale-110"
                   />
               </div>
               <div className="text-center md:text-left space-y-2">
