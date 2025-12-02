@@ -45,4 +45,6 @@ if (typeof window === 'undefined' && !process.env.NEXT_PUBLIC_FIREBASE_API_KEY) 
     }
 }
 
-export { app, auth, db, storage };
+const isFirebaseInitialized = app && typeof app.name === 'string';
+
+export { app, auth, db, storage, isFirebaseInitialized };
