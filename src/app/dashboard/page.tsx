@@ -23,9 +23,38 @@ import { RecentActivity } from "@/components/dashboard/recent-activity"
 import TeamSwitcher from "@/components/dashboard/team-switcher"
 import { UserNav } from "@/components/dashboard/user-nav"
 import { useAuth } from "@/context/AuthContext"
+import { getProjects } from "@/lib/projects-service-mock"
+import { useEffect, useState } from "react"
 
 export default function DashboardPage() {
     const { user, role } = useAuth();
+    const [stats, setStats] = useState({
+        totalRevenue: 0,
+        activeProjects: 0,
+        completedProjects: 0,
+        totalProjects: 0
+    });
+
+    useEffect(() => {
+        async function loadStats() {
+            try {
+                const projects = await getProjects();
+                const totalRevenue = projects.reduce((sum, p) => sum + (p.budget || 0), 0);
+                const activeProjects = projects.filter(p => p.status === 'active').length;
+                const completedProjects = projects.filter(p => p.status === 'completed').length;
+
+                setStats({
+                    totalRevenue,
+                    activeProjects,
+                    completedProjects,
+                    totalProjects: projects.length
+                });
+            } catch (error) {
+                console.error("Failed to load dashboard stats", error);
+            }
+        }
+        loadStats();
+    }, []);
 
     return (
         <div className="flex-1 space-y-4 p-8 pt-6">
@@ -70,9 +99,9 @@ export default function DashboardPage() {
                                 </svg>
                             </CardHeader>
                             <CardContent>
-                                <div className="text-2xl font-bold">$45,231.89</div>
+                                <div className="text-2xl font-bold">${stats.totalRevenue.toLocaleString()}</div>
                                 <p className="text-xs text-muted-foreground">
-                                    +20.1% from last month
+                                    Across {stats.totalProjects} projects
                                 </p>
                             </CardContent>
                         </Card>
@@ -97,9 +126,9 @@ export default function DashboardPage() {
                                 </svg>
                             </CardHeader>
                             <CardContent>
-                                <div className="text-2xl font-bold">+12</div>
+                                <div className="text-2xl font-bold">{stats.activeProjects}</div>
                                 <p className="text-xs text-muted-foreground">
-                                    +2 new this month
+                                    {stats.completedProjects} completed
                                 </p>
                             </CardContent>
                         </Card>

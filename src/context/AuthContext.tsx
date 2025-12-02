@@ -9,12 +9,14 @@ interface AuthContextType {
     user: User | null;
     role: 'admin' | 'designer' | 'client' | null;
     loading: boolean;
+    loginAsMockAdmin: () => void;
 }
 
 const AuthContext = createContext<AuthContextType>({
     user: null,
     role: null,
     loading: true,
+    loginAsMockAdmin: () => { },
 });
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
@@ -23,6 +25,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        // Check for persisted mock session
+        const isMockAuth = localStorage.getItem('mockAuth') === 'true';
+        if (isMockAuth) {
+            loginAsMockAdmin();
+            return;
+        }
+
         if (!isFirebaseInitialized) {
             console.warn("Firebase not initialized. Auth disabled.");
             setLoading(false);
@@ -30,6 +39,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         }
 
         const unsubscribe = onAuthStateChanged(auth, async (user) => {
+            if (localStorage.getItem('mockAuth') === 'true') return; // Ignore real auth if mock is active
+
             setUser(user);
             if (user) {
                 // SUPER ADMIN BYPASS: Grant admin immediately for specific emails
@@ -71,8 +82,40 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         return () => unsubscribe();
     }, []);
 
+    const loginAsMockAdmin = () => {
+        console.warn("Forcing Mock Admin Login");
+        localStorage.setItem('mockAuth', 'true');
+        setUser({
+            uid: 'mock-admin',
+            email: 'admin@example.com',
+            displayName: 'Mock Admin',
+            emailVerified: true,
+            isAnonymous: false,
+            metadata: {},
+            providerData: [],
+            refreshToken: '',
+            tenantId: null,
+            delete: async () => { },
+            getIdToken: async () => 'mock-token',
+            getIdTokenResult: async () => ({
+                token: 'mock-token',
+                signInProvider: 'custom',
+                claims: { role: 'admin' },
+                authTime: Date.now().toString(),
+                issuedAtTime: Date.now().toString(),
+                expirationTime: (Date.now() + 3600000).toString(),
+            }),
+            reload: async () => { },
+            toJSON: () => ({}),
+            phoneNumber: null,
+            photoURL: null,
+        } as unknown as User);
+        setRole('admin');
+        setLoading(false);
+    };
+
     return (
-        <AuthContext.Provider value={{ user, role, loading }}>
+        <AuthContext.Provider value={{ user, role, loading, loginAsMockAdmin }}>
             {children}
         </AuthContext.Provider>
     );

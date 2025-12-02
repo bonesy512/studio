@@ -23,6 +23,8 @@ export function TaskDialog({ open, onOpenChange, onSubmit, users, defaultStatus,
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [assignedTo, setAssignedTo] = useState("");
+    const [priority, setPriority] = useState<Task['priority']>('medium');
+    const [dueDate, setDueDate] = useState("");
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -31,10 +33,14 @@ export function TaskDialog({ open, onOpenChange, onSubmit, users, defaultStatus,
                 setTitle(taskToEdit.title);
                 setDescription(taskToEdit.description || "");
                 setAssignedTo(typeof taskToEdit.assignedTo === 'string' ? taskToEdit.assignedTo : "");
+                setPriority(taskToEdit.priority || 'medium');
+                setDueDate(taskToEdit.dueDate ? new Date(taskToEdit.dueDate).toISOString().split('T')[0] : "");
             } else {
                 setTitle("");
                 setDescription("");
                 setAssignedTo("");
+                setPriority('medium');
+                setDueDate("");
             }
         }
     }, [open, taskToEdit]);
@@ -47,6 +53,8 @@ export function TaskDialog({ open, onOpenChange, onSubmit, users, defaultStatus,
                 title,
                 description,
                 assignedTo,
+                priority,
+                dueDate: dueDate ? new Date(dueDate) : undefined,
                 status: taskToEdit ? taskToEdit.status : defaultStatus || 'todo'
             });
             onOpenChange(false);
@@ -97,6 +105,30 @@ export function TaskDialog({ open, onOpenChange, onSubmit, users, defaultStatus,
                             onChange={(e) => setDescription(e.target.value)}
                             placeholder="Add details about this task..."
                         />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                        <div className="grid gap-2">
+                            <Label htmlFor="priority">Priority</Label>
+                            <Select value={priority} onValueChange={(v: any) => setPriority(v)}>
+                                <SelectTrigger>
+                                    <SelectValue placeholder="Select priority" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="low">Low</SelectItem>
+                                    <SelectItem value="medium">Medium</SelectItem>
+                                    <SelectItem value="high">High</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                        <div className="grid gap-2">
+                            <Label htmlFor="dueDate">Due Date</Label>
+                            <Input
+                                id="dueDate"
+                                type="date"
+                                value={dueDate}
+                                onChange={(e) => setDueDate(e.target.value)}
+                            />
+                        </div>
                     </div>
                     <DialogFooter>
                         <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>

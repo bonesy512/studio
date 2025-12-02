@@ -1,0 +1,46 @@
+{
+  "companies": [
+    {
+      "name": "ClevrSol",
+      "email": "info@clevrsol.io",
+      "status": "lead",
+      "tags": [
+        "Consulting"
+      ],
+      "id": "1f88578b-c97b-4cfb-9d78-8f051f8d8c55",
+      "aggregated_revenue": 0,
+      "createdAt": "2025-12-02T21:05:01.421Z",
+      "updatedAt": "2025-12-02T21:05:01.421Z"
+    },
+    {
+      "name": "ProJob",
+      "email": "contact@projob.app",
+      "status": "active",
+      "tags": [
+        "Tech",
+        "SaaS"
+      ],
+      "id": "cdb9836b-b0f3-45bf-866d-fc2b9f6dea05",
+      "aggregated_revenue": 0,
+      "createdAt": "2025-12-02T21:05:01.172Z",
+      "updatedAt": "2025-12-02T21:05:01.172Z"
+    },
+    {
+      "name": "Mingle Masters TX",
+      "email": "hello@minglemasters.com",
+      "phone": "512-555-0123",
+      "status": "active",
+      "tags": [
+        "Events",
+        "VIP"
+      ],
+      "address": "123 Event Horizon Blvd, Austin, TX",
+      "id": "55334e3d-bead-4760-8dff-c212d53708c6",
+      "aggregated_revenue": 0,
+      "createdAt": "2025-12-02T21:05:00.924Z",
+      "updatedAt": "2025-12-02T21:05:00.924Z"
+    }
+  ],
+  "contacts": [],
+  "events": []
+}

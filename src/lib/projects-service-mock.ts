@@ -56,6 +56,38 @@ export const createProject = async (project: Omit<Project, 'id' | 'createdAt' | 
 
     localStorage.setItem(STORAGE_KEYS.PROJECTS, JSON.stringify([newProject, ...projects]));
     return newProject.id;
+    localStorage.setItem(STORAGE_KEYS.PROJECTS, JSON.stringify([newProject, ...projects]));
+    localStorage.setItem(STORAGE_KEYS.PROJECTS, JSON.stringify([newProject, ...projects]));
+    return newProject.id;
+};
+
+export const updateProject = async (projectId: string, updates: Partial<Project>): Promise<void> => {
+    await delay(500);
+    const projects = await getProjects();
+    const index = projects.findIndex(p => p.id === projectId);
+
+    if (index !== -1) {
+        // Merge updates, handling date conversions if necessary (though partials usually come as proper types from client)
+        // But if coming from JSON, dates might be strings.
+        // For simplicity in mock, we assume caller passes correct types.
+        projects[index] = { ...projects[index], ...updates, updatedAt: new Date() };
+        localStorage.setItem(STORAGE_KEYS.PROJECTS, JSON.stringify(projects));
+    }
+};
+
+export const deleteProject = async (projectId: string): Promise<void> => {
+    await delay(500);
+    const projects = await getProjects();
+    const updatedProjects = projects.filter(p => p.id !== projectId);
+    localStorage.setItem(STORAGE_KEYS.PROJECTS, JSON.stringify(updatedProjects));
+
+    // Also delete tasks for this project
+    const tasksData = localStorage.getItem(STORAGE_KEYS.TASKS);
+    if (tasksData) {
+        const tasks = JSON.parse(tasksData);
+        const updatedTasks = tasks.filter((t: any) => t.projectId !== projectId);
+        localStorage.setItem(STORAGE_KEYS.TASKS, JSON.stringify(updatedTasks));
+    }
 };
 
 // Tasks

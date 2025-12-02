@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
 import { Loader2 } from "lucide-react"
 import Link from "next/link"
+import { useAuth } from "@/context/AuthContext"
 
 export function LoginForm({
   className,
@@ -22,6 +23,7 @@ export function LoginForm({
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
   const { toast } = useToast()
+  const { loginAsMockAdmin } = useAuth()
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -36,6 +38,18 @@ export function LoginForm({
       router.push("/dashboard")
     } catch (error: any) {
       console.error(error)
+
+      // Fallback for invalid API key (common in dev/build environments)
+      if (error.code === 'auth/api-key-not-valid' || error.message?.includes('api-key-not-valid')) {
+        toast({
+          title: "Offline Mode",
+          description: "Invalid API Key detected. Logging in as Mock Admin.",
+        })
+        loginAsMockAdmin();
+        router.push("/dashboard");
+        return;
+      }
+
       toast({
         variant: "destructive",
         title: "Error",

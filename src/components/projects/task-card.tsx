@@ -8,9 +8,10 @@ import { Task } from "@/lib/projects-service";
 
 interface TaskCardProps {
     task: Task;
+    onEdit?: () => void;
 }
 
-export function TaskCard({ task }: TaskCardProps) {
+export function TaskCard({ task, onEdit }: TaskCardProps) {
     const {
         attributes,
         listeners,
@@ -31,12 +32,20 @@ export function TaskCard({ task }: TaskCardProps) {
     };
 
     return (
-        <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="mb-3">
-            <Card className="cursor-grab active:cursor-grabbing hover:shadow-md transition-shadow">
-                <CardHeader className="p-4 pb-2 space-y-0">
+        <div ref={setNodeRef} style={style} {...attributes} {...listeners} className="mb-4">
+            <Card
+                className="cursor-grab active:cursor-grabbing hover:shadow-lg transition-all shadow-sm border-muted-foreground/20"
+                onClick={(e) => {
+                    // Prevent click when dragging (dnd-kit handles this usually, but good to be safe)
+                    // Actually, dnd-kit might swallow clicks. We might need a separate edit button if onClick on card doesn't work well with drag.
+                    // But usually it works if not dragging.
+                    if (onEdit) onEdit();
+                }}
+            >
+                <CardHeader className="p-5 pb-2 space-y-0">
                     <div className="flex justify-between items-start">
-                        <Badge variant="secondary" className={`text-[10px] px-1.5 py-0 ${priorityColor[task.priority]}`}>
-                            {task.priority}
+                        <Badge variant="secondary" className={`text-[10px] px-2 py-0.5 ${priorityColor[task.priority || 'medium']}`}>
+                            {task.priority || 'medium'}
                         </Badge>
                         {task.assignedTo && (
                             <Avatar className="h-6 w-6">
@@ -47,14 +56,14 @@ export function TaskCard({ task }: TaskCardProps) {
                             </Avatar>
                         )}
                     </div>
-                    <CardTitle className="text-sm font-medium pt-2 leading-tight">
+                    <CardTitle className="text-base font-medium pt-3 leading-tight">
                         {task.title}
                     </CardTitle>
                 </CardHeader>
-                <CardContent className="p-4 pt-2">
+                <CardContent className="p-5 pt-2">
                     {task.dueDate && (
                         <p className="text-xs text-muted-foreground">
-                            Due: {format(task.dueDate, "MMM d")}
+                            Due: {format(new Date(task.dueDate), "MMM d")}
                         </p>
                     )}
                 </CardContent>

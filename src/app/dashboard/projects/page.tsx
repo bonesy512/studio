@@ -5,16 +5,24 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { KanbanBoard } from "@/components/projects/kanban-board";
 import { Project, getProjects, createProject } from "@/lib/projects-service-mock";
 import { Button } from "@/components/ui/button";
-import { Plus, Database } from "lucide-react";
+import { Plus, Database, Trash2 } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
-import { CreateProjectDialog } from "@/components/projects/create-project-dialog";
+import { ProjectDialog } from "@/components/projects/project-dialog";
+import { ProjectHeader } from "@/components/projects/project-header";
+import {
+    ContextMenu,
+    ContextMenuContent,
+    ContextMenuItem,
+    ContextMenuTrigger,
+} from "@/components/ui/context-menu";
 
 export default function ProjectsPage() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
-    const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
+    const [isProjectDialogOpen, setIsProjectDialogOpen] = useState(false);
+    const [projectToEdit, setProjectToEdit] = useState<Project | null>(null);
 
     const { user } = useAuth();
     const searchParams = useSearchParams();
@@ -26,7 +34,8 @@ export default function ProjectsPage() {
 
     useEffect(() => {
         if (searchParams.get("create") === "true") {
-            setIsCreateDialogOpen(true);
+            setProjectToEdit(null);
+            setIsProjectDialogOpen(true);
         }
     }, [searchParams]);
 
@@ -47,10 +56,22 @@ export default function ProjectsPage() {
         }
     };
 
-    const handleProjectCreated = () => {
+    const handleProjectSaved = () => {
         loadProjects();
+        setIsProjectDialogOpen(false);
+        setProjectToEdit(null);
         // Remove query param
         router.replace("/dashboard/projects");
+    };
+
+    const openCreateDialog = () => {
+        setProjectToEdit(null);
+        setIsProjectDialogOpen(true);
+    };
+
+    const openEditDialog = (project: Project) => {
+        setProjectToEdit(project);
+        setIsProjectDialogOpen(true);
     };
 
     const handleSeedData = async () => {
@@ -100,17 +121,10 @@ export default function ProjectsPage() {
                         <Database className="h-4 w-4 mr-2" />
                         Seed Data
                     </Button>
-                    <CreateProjectDialog
-                        open={isCreateDialogOpen}
-                        onOpenChange={setIsCreateDialogOpen}
-                        onProjectCreated={handleProjectCreated}
-                        trigger={
-                            <Button size="sm">
-                                <Plus className="h-4 w-4 mr-2" />
-                                Create Project
-                            </Button>
-                        }
-                    />
+                    <Button size="sm" onClick={openCreateDialog}>
+                        <Plus className="h-4 w-4 mr-2" />
+                        Create Project
+                    </Button>
                 </div>
             </div>
 
@@ -128,28 +142,77 @@ export default function ProjectsPage() {
                     <div className="h-full flex flex-col">
                         <div className="mb-4 flex gap-2 overflow-x-auto pb-2">
                             {projects.map(p => (
-                                <Button
-                                    key={p.id}
-                                    variant={activeProjectId === p.id ? "default" : "outline"}
-                                    size="sm"
-                                    onClick={() => setActiveProjectId(p.id)}
-                                    className="whitespace-nowrap"
-                                >
-                                    {p.name}
-                                </Button>
+                                <ContextMenu key={p.id}>
+                                    <ContextMenuTrigger>
+                                        <Button
+                                            variant={activeProjectId === p.id ? "default" : "outline"}
+                                            size="sm"
+                                            onClick={() => setActiveProjectId(p.id)}
+                                            className="whitespace-nowrap"
+                                        >
+                                            {p.name}
+                                        </Button>
+                                    </ContextMenuTrigger>
+                                    <ContextMenuContent>
+                                        <ContextMenuItem onClick={() => openEditDialog(p)}>
+                                            Rename / Edit
+                                        </ContextMenuItem>
+                                    </ContextMenuContent>
+                                </ContextMenu>
                             ))}
                         </div>
-                        <div className="flex-1 overflow-hidden">
-                            <KanbanBoard projectId={activeProjectId} />
-                        </div>
+                        {(() => {
+                            const activeProject = projects.find(p => p.id === activeProjectId);
+                            return activeProject ? (
+                                <>
+                                    <div className="flex justify-end mb-2">
+                                        <Button
+                                            variant="ghost"
+                                            size="sm"
+                                            className="text-red-500 hover:text-red-600 hover:bg-red-50"
+                                            onClick={async () => {
+                                                if (confirm("Are you sure you want to delete this project?")) {
+                                                    try {
+                                                        const { deleteProjectAction } = await import("@/app/actions/projects");
+                                                        await deleteProjectAction(activeProject.id);
+                                                        // Refresh
+                                                        loadProjects();
+                                                        setActiveProjectId(null);
+                                                    } catch (e) {
+                                                        console.error("Failed to delete project", e);
+                                                    }
+                                                }
+                                            }}
+                                        >
+                                            <Trash2 className="h-4 w-4 mr-2" />
+                                            Delete Project
+                                        </Button>
+                                    </div>
+                                    <ProjectHeader
+                                        project={activeProject}
+                                        onEdit={() => openEditDialog(activeProject)}
+                                    />
+                                    <div className="flex-1 overflow-hidden">
+                                        <KanbanBoard projectId={activeProjectId} />
+                                    </div>
+                                </>
+                            ) : null;
+                        })()}
                     </div>
                 ) : (
                     <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
                         <p className="mb-4">No active projects found.</p>
-                        <Button onClick={() => setIsCreateDialogOpen(true)}>Create First Project</Button>
+                        <Button onClick={openCreateDialog}>Create First Project</Button>
                     </div>
                 )}
             </div>
+
+            <ProjectDialog
+                open={isProjectDialogOpen}
+                onOpenChange={setIsProjectDialogOpen}
+                onProjectSaved={handleProjectSaved}
+                projectToEdit={projectToEdit}
+            />
         </div>
     );
 }

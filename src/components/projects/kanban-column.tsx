@@ -9,19 +9,20 @@ interface KanbanColumnProps {
     title: string;
     tasks: Task[];
     onAddTask?: () => void;
+    onEditTask?: (task: Task) => void;
 }
 
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function KanbanColumn({ id, title, tasks, onAddTask }: KanbanColumnProps) {
+export function KanbanColumn({ id, title, tasks, onAddTask, onEditTask }: KanbanColumnProps) {
     const { setNodeRef } = useDroppable({
         id: id,
     });
 
     return (
-        <div className="flex flex-col h-full w-80 shrink-0">
-            <div className="flex items-center justify-between mb-3 px-1">
+        <div className="flex flex-col h-full w-96 shrink-0">
+            <div className="flex items-center justify-between mb-4 px-1">
                 <h3 className="font-semibold text-sm text-foreground/80 uppercase tracking-wider">
                     {title}
                 </h3>
@@ -40,13 +41,13 @@ export function KanbanColumn({ id, title, tasks, onAddTask }: KanbanColumnProps)
             <div
                 ref={setNodeRef}
                 className={cn(
-                    "flex-1 bg-muted/50 rounded-lg p-2 overflow-y-auto min-h-[150px]",
+                    "flex-1 bg-muted/30 rounded-lg p-3 overflow-y-auto min-h-[150px]",
                     "border border-transparent hover:border-border/50 transition-colors"
                 )}
             >
                 <SortableContext items={tasks.map((t) => t.id)} strategy={verticalListSortingStrategy}>
                     {tasks.map((task) => (
-                        <TaskCard key={task.id} task={task} />
+                        <TaskCard key={task.id} task={task} onEdit={() => onEditTask?.(task)} />
                     ))}
                 </SortableContext>
                 {tasks.length === 0 && (

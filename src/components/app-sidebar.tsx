@@ -51,8 +51,8 @@ const data = {
       icon: FolderIcon,
     },
     {
-      title: "Clients",
-      url: "/dashboard/clients",
+      title: "Companies",
+      url: "/dashboard/crm",
       icon: UsersIcon,
     },
     {

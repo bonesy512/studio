@@ -74,10 +74,32 @@ export function KanbanBoard({ projectId }: KanbanBoardProps) {
         setIsDialogOpen(true);
     };
 
+    const openEditDialog = (task: Task) => {
+        setEditingTask(task);
+        setTargetColumn(task.status);
+        setIsDialogOpen(true);
+    };
+
     const handleSaveTask = async (taskData: Partial<Task>) => {
         if (editingTask) {
-            // Edit logic would go here (not implemented in mock actions yet)
-            console.log("Editing task", taskData);
+            // Edit logic
+            const updatedTask = { ...editingTask, ...taskData };
+
+            // Optimistic update
+            setTasks(prev => prev.map(t => t.id === editingTask.id ? updatedTask : t));
+
+            try {
+                // Dynamically import updateTaskAction to avoid circular dependency if any
+                const { updateTaskAction } = await import("@/app/actions/projects");
+                await updateTaskAction(editingTask.id, taskData);
+                // Reload to confirm
+                const fetchedTasks = await getTasks(projectId);
+                setTasks(fetchedTasks);
+            } catch (error) {
+                console.error("Failed to update task", error);
+                // Revert
+                loadData();
+            }
         } else {
             // Create logic
             const newTask: Omit<Task, 'id'> = {
@@ -85,9 +107,10 @@ export function KanbanBoard({ projectId }: KanbanBoardProps) {
                 title: taskData.title!,
                 description: taskData.description,
                 status: taskData.status || targetColumn,
-                priority: 'medium',
+                priority: taskData.priority || 'medium',
                 order: tasks.filter(t => t.status === (taskData.status || targetColumn)).length,
                 assignedTo: taskData.assignedTo,
+                dueDate: taskData.dueDate,
                 createdAt: new Date(),
                 updatedAt: new Date(),
             };
@@ -217,6 +240,7 @@ export function KanbanBoard({ projectId }: KanbanBoardProps) {
                         title={col.title}
                         tasks={tasksByStatus[col.id]}
                         onAddTask={() => openCreateDialog(col.id)}
+                        onEditTask={openEditDialog}
                     />
                 ))}
             </div>

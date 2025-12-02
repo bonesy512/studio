@@ -8,12 +8,16 @@ import { format } from "date-fns";
 
 interface ProjectHeaderProps {
     project: Project;
+    onEdit?: () => void;
 }
 
-export function ProjectHeader({ project }: ProjectHeaderProps) {
+export function ProjectHeader({ project, onEdit }: ProjectHeaderProps) {
     return (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mb-6">
-            <Card>
+            <Card
+                className="shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
+                onClick={onEdit}
+            >
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                         Total Budget
@@ -29,7 +33,10 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
                     </p>
                 </CardContent>
             </Card>
-            <Card>
+            <Card
+                className="shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
+                onClick={onEdit}
+            >
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                         Client
@@ -45,7 +52,10 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
                     </p>
                 </CardContent>
             </Card>
-            <Card>
+            <Card
+                className="shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
+                onClick={onEdit}
+            >
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                         Deadline
@@ -61,7 +71,10 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
                     </p>
                 </CardContent>
             </Card>
-            <Card>
+            <Card
+                className="shadow-sm cursor-pointer hover:border-primary/50 transition-colors"
+                onClick={onEdit}
+            >
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                     <CardTitle className="text-sm font-medium">
                         Scope
@@ -72,9 +85,9 @@ export function ProjectHeader({ project }: ProjectHeaderProps) {
                     <div className="text-sm font-medium line-clamp-2">
                         {project.description || "No scope defined"}
                     </div>
-                    <p className="text-xs text-muted-foreground mt-1">
+                    <div className="text-xs text-muted-foreground mt-1">
                         <Badge variant="outline">View Details</Badge>
-                    </p>
+                    </div>
                 </CardContent>
             </Card>
         </div>
