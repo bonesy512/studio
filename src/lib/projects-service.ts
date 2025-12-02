@@ -35,6 +35,8 @@ export interface Task {
     dueDate?: Date;
     assignedTo?: string; // User UID
     order: number;
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 
 // Projects
