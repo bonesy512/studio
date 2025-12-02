@@ -1,14 +1,15 @@
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check, Code, Bot, Palette, ShoppingCart, DollarSign, BrainCircuit, Rocket, Wrench } from 'lucide-react';
+import { Check, Code, Bot, Palette, ShoppingCart, DollarSign, BrainCircuit, Rocket, Wrench, Drone } from 'lucide-react';
 import Link from 'next/link';
 
 const designAndBranding = {
   title: 'Design & Branding',
+  id: 'design-branding',
   icon: Palette,
   items: [
-    { name: 'Logo Design', price: '$1,000+'},
+    { name: 'Logo Design', price: '$1,000+' },
     { name: 'Logo Design & Style Guide', price: '$2,000+' },
     { name: 'Full Brand Identity System', price: '$5,000+' },
     { name: 'UI/UX for Web & Mobile', price: '$5,000+' },
@@ -17,6 +18,7 @@ const designAndBranding = {
 
 const webAndApp = {
   title: 'Web & App Development',
+  id: 'web-app',
   icon: Code,
   items: [
     { name: 'Wordpress Website (CMS)', price: '$5,000+' },
@@ -27,6 +29,7 @@ const webAndApp = {
 
 const aiAndConsulting = {
   title: 'AI & Consulting',
+  id: 'ai-consulting',
   icon: BrainCircuit,
   items: [
     { name: 'AI Integration (AaaS)', price: '$5,000+' },
@@ -36,16 +39,28 @@ const aiAndConsulting = {
 };
 
 const retainersAndHourly = {
-    title: 'Retainers & Hourly',
-    icon: Wrench,
-    items: [
-        { name: 'General Technical/Development', price: '$175/hr' },
-        { name: 'Specialized Consulting (AI/IT)', price: '$250/hr' },
-        { name: '15-min billing increments', price: 'Fair & transparent' },
-    ],
+  title: 'Retainers & Hourly',
+  id: 'retainers-hourly',
+  icon: Wrench,
+  items: [
+    { name: 'General Technical/Development', price: '$175/hr' },
+    { name: 'Specialized Consulting (AI/IT)', price: '$250/hr' },
+    { name: '15-min billing increments', price: 'Fair & transparent' },
+  ],
 };
 
-const plans = [designAndBranding, webAndApp, aiAndConsulting, retainersAndHourly];
+const droneServices = {
+  title: 'Drone Services',
+  id: 'drone-services',
+  icon: Drone,
+  items: [
+    { name: 'Land Development & Purchase Insight', price: '$175/hr' },
+    { name: 'Infrared Scans (Roof/Moisture)', price: '$2,500' },
+    { name: '15-min billing increments', price: 'Included' },
+  ],
+};
+
+const plans = [designAndBranding, webAndApp, aiAndConsulting, retainersAndHourly, droneServices];
 
 export default function PricingPage() {
   return (
@@ -56,10 +71,10 @@ export default function PricingPage() {
           Transparent, a la carte pricing for transformative results. Choose a service or book a consultation.
         </p>
       </section>
-      
+
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         {plans.map((plan) => (
-          <Card key={plan.title} className="flex flex-col h-full">
+          <Card key={plan.title} id={plan.id} className="flex flex-col h-full">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <plan.icon className="w-8 h-8 text-primary" />
@@ -77,9 +92,9 @@ export default function PricingPage() {
               </ul>
             </CardContent>
             <CardFooter>
-                <Button asChild className="w-full">
-                   <Link href="/book">Book a Consultation</Link>
-                </Button>
+              <Button asChild className="w-full">
+                <Link href="/book">Book a Consultation</Link>
+              </Button>
             </CardFooter>
           </Card>
         ))}

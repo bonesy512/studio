@@ -5,16 +5,14 @@ import { headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 
 export async function createCheckoutSession(productName: string, amount: number) {
-  const origin = headers().get('origin') || process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:9002';
+  const origin = (await headers()).get('origin') || process.env.NEXT_PUBLIC_APP_URL;
 
-  if (!process.env.STRIPE_SECRET_KEY || process.env.STRIPE_SECRET_KEY === 'your_stripe_secret_key_here') {
-    // In a development environment without a real Stripe key,
-    // we can simulate a successful checkout for UI/UX testing.
-    console.log('Stripe key not found or is placeholder, simulating successful checkout.');
-    const successUrl = new URL(`${origin}/book`);
-    successUrl.searchParams.set('session_id', `cs_test_${btoa(Math.random().toString()).substring(0, 30)}`);
-    redirect(successUrl.toString());
-    return;
+  if (!origin) {
+    throw new Error('Could not determine origin URL');
+  }
+
+  if (!process.env.STRIPE_SECRET_KEY) {
+    throw new Error('STRIPE_SECRET_KEY is not defined');
   }
 
   const session = await stripe.checkout.sessions.create({

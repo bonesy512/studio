@@ -1,6 +1,15 @@
 // src/lib/portfolio-data.ts
 
-export const projects = [
+export interface Project {
+  title: string;
+  slug: string;
+  description: string;
+  imageUrl: string;
+  imageHint: string;
+  link: string;
+}
+
+export const projects: Project[] = [
   {
     title: 'ProJob',
     slug: 'projob',

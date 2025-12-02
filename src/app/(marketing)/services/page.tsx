@@ -1,6 +1,6 @@
 // src/app/services/page.tsx
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Palette, Code, BrainCircuit } from 'lucide-react';
+import { Palette, Code, BrainCircuit, Drone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -8,6 +8,7 @@ const serviceCategories = [
   {
     category: 'AI & Strategic Consulting',
     icon: BrainCircuit,
+    pricingHash: undefined,
     services: [
       {
         title: 'AI Integration & Custom Agent Development',
@@ -24,6 +25,7 @@ const serviceCategories = [
   {
     category: 'Design & Branding',
     icon: Palette,
+    pricingHash: undefined,
     services: [
       {
         title: 'Full Brand Identity',
@@ -40,6 +42,7 @@ const serviceCategories = [
   {
     category: 'Technology & Development',
     icon: Code,
+    pricingHash: undefined,
     services: [
       {
         title: 'Custom App / SaaS Platform (MVP)',
@@ -48,8 +51,19 @@ const serviceCategories = [
       },
       {
         title: 'Technology Modernization',
-        headline: 'Future-proofing your business.',
         content: "Outdated technology can hold your business back. We help you move forward by assessing your current systems and creating a clear plan to upgrade your tech. We’ll guide you through every step of the transition to a more secure, scalable, and efficient foundation for your business."
+      }
+    ]
+  },
+  {
+    category: 'Drone Services',
+    icon: Drone,
+    pricingHash: '#drone-services',
+    services: [
+      {
+        title: 'Aerial Surveys & Infrared Scans',
+        headline: 'Advanced thermal and visual insights.',
+        content: "We provide high-resolution aerial surveys for land development and specialized infrared roof scans to detect moisture damage. Leveraging Level 1 Infrared Thermography, we deliver precise data to support your purchasing and maintenance decisions."
       }
     ]
   },
@@ -83,7 +97,7 @@ export default function ServicesPage() {
                 </CardContent>
                 <CardFooter>
                   <Button asChild className="w-full">
-                    <Link href="/pricing">View Pricing Details</Link>
+                    <Link href={category.pricingHash ? `/pricing${category.pricingHash}` : '/pricing'}>View Pricing Details</Link>
                   </Button>
                 </CardFooter>
               </Card>
