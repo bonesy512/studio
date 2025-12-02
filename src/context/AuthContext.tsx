@@ -24,7 +24,33 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         if (!isFirebaseInitialized) {
-            console.warn("Firebase not initialized. Auth disabled.");
+            console.warn("Firebase not initialized. Using Mock Admin.");
+            setUser({
+                uid: 'mock-admin',
+                email: 'admin@example.com',
+                displayName: 'Mock Admin',
+                emailVerified: true,
+                isAnonymous: false,
+                metadata: {},
+                providerData: [],
+                refreshToken: '',
+                tenantId: null,
+                delete: async () => { },
+                getIdToken: async () => 'mock-token',
+                getIdTokenResult: async () => ({
+                    token: 'mock-token',
+                    signInProvider: 'custom',
+                    claims: { role: 'admin' },
+                    authTime: Date.now().toString(),
+                    issuedAtTime: Date.now().toString(),
+                    expirationTime: (Date.now() + 3600000).toString(),
+                }),
+                reload: async () => { },
+                toJSON: () => ({}),
+                phoneNumber: null,
+                photoURL: null,
+            } as unknown as User);
+            setRole('admin');
             setLoading(false);
             return;
         }
