@@ -196,7 +196,7 @@ export function KanbanBoard({ projectId }: KanbanBoardProps) {
             // Server Action
             updateTaskStatusAction(activeId, newStatus, 0).catch(err => {
                 console.error("Failed to update task status", err);
-                loadTasks();
+                loadData();
             });
         }
     }
