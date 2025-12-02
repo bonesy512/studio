@@ -14,13 +14,35 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const auth = getAuth(app);
-const storage = getStorage(app);
+let app: any;
+let auth: any;
+let db: any;
+let storage: any;
 
-// Initialize Firestore with long polling to avoid WebSocket hangs
-const db = initializeFirestore(app, {
-    experimentalForceLongPolling: true,
-});
+if (typeof window === 'undefined' && !process.env.NEXT_PUBLIC_FIREBASE_API_KEY) {
+    console.warn('Firebase API key not found. Skipping initialization (likely build time).');
+    app = {} as any;
+    auth = {} as any;
+    db = {} as any;
+    storage = {} as any;
+} else {
+    try {
+        app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+        auth = getAuth(app);
+        storage = getStorage(app);
+
+        // Initialize Firestore with long polling to avoid WebSocket hangs
+        db = initializeFirestore(app, {
+            experimentalForceLongPolling: true,
+        });
+    } catch (error) {
+        console.error('Firebase initialization failed:', error);
+        // Fallback to prevent crash
+        app = {} as any;
+        auth = {} as any;
+        db = {} as any;
+        storage = {} as any;
+    }
+}
 
 export { app, auth, db, storage };
